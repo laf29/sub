@@ -16,7 +16,7 @@
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width=1000*vw height:="1000vh"></canvas>
+    <canvas id="myCanvas" width=100*vw height=100*vh></canvas>
 
     <script>
       const canvas = document.getElementById("myCanvas");
@@ -32,6 +32,12 @@
       ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
       ctx.fillStyle = "green";
       ctx.fill();
+      ctx.closePath();
+
+      ctx.beginPath();
+      ctx.rect(160, 10, 100, 40);
+      ctx.strokeStyle = "rgb(0 0 255 / 50%)";
+      ctx.stroke();
       ctx.closePath();
     </script>
   </body>
