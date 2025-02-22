@@ -30,11 +30,17 @@
       ctx.closePath();
 
       ctx.beginPath();
+      ctx.rect(0, 60, 480, 50);
+      ctx.fillStyle = "#rgb(0 0 255 / 50%)";
+      ctx.fill();
+      ctx.closePath();
+
+      ctx.beginPath();
       ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
       ctx.fillStyle = "green";
       ctx.fill();
       ctx.closePath();
-
+      
       ctx.beginPath();
       ctx.rect(160, 10, 100, 40);
       ctx.strokeStyle = "rgb(0 0 255 / 50%)";
