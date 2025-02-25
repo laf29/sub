@@ -32,11 +32,11 @@
       ctx.fill();
       ctx.closePath();
 
-      ctx.beginPath();
-      ctx.rect(0, 75, 10000, 10000);
-      ctx.fillStyle = "#rgba(50 0 255 / 50%)";
-      ctx.fill();
-      ctx.closePath();
+    //  ctx.beginPath();
+    //  ctx.rect(0, 75, 10000, 10000);
+    //  ctx.fillStyle = "#rgba(50 0 255 / 50%)";
+    //  ctx.fill();
+    //  ctx.closePath();
 
       // Create a Gradient
       const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -45,7 +45,7 @@
 
       // Draw a filled Rectangle
       ctx.fillStyle = grd;
-      ctx.fillRect(20, 20, 150, 100);
+      ctx.fillRect(0, 75, 10000, 10000);
 
       ctx.beginPath();
       ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
