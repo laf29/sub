@@ -63,8 +63,12 @@
  //     ctx.stroke();
 //      ctx.closePath();
       function drawWater() {
-        ctx.globalAlpha = 0.5;
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
+        grd.addColorStop(0, "#0c34c7");
+        grd.addColorStop(1, "#031554");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 40, canvas.width, canvas.height);
+        ctx.globalAlpha = 0.5;
         grd.addColorStop(0, "#0c34c7");
         grd.addColorStop(1, "#031554");
         ctx.fillStyle = grd;
