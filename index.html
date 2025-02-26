@@ -16,11 +16,14 @@
         height: 87vh;
         width: 100vw;
       }
+      button {
+        display: block;
+      }
     </style>
   </head>
   <body style="background-color: #8c7615;">
     <canvas id="myCanvas">Your browser cannot support this game.</canvas>
-      <button id="runButton">Start game</button>
+    <button id="runButton">Start game</button>
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
@@ -93,7 +96,15 @@
         sChullX += SubXChange;
         sChullY += SubYChange;
       }
-      setInterval(draw, 10);
+      //setInterval(draw, 10);
+      function startGame() {
+        setInterval(draw, 10);
+      }
+
+      document.getElementById("runButton").addEventListener("click", function () {
+        startGame();
+        this.disabled = true;
+      });
     </script>
   </body>
 </html>
