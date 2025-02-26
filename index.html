@@ -68,6 +68,9 @@
         grd.addColorStop(1, "#031554");
         ctx.fillStyle = grd;
         ctx.fillRect(0, 40, canvas.width, canvas.height);
+      }
+      function drawWaterO() {
+        const grd = ctx.createLinearGradient(100, 0, 100, 100);
         ctx.globalAlpha = 0.5;
         grd.addColorStop(0, "#0c34c7");
         grd.addColorStop(1, "#031554");
@@ -84,8 +87,9 @@
       }
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawSub();
         drawWater();
+        drawSub();
+        drawWaterO();
         sChullX += SubXChange;
         sChullY += SubYChange;
       }
