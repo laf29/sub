@@ -85,6 +85,7 @@
       function drawSub() {
         ctx.beginPath();
         ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
+        ctx.rect(sChullX - 16, sChullY - 6, 16, 12);
         ctx.fillStyle = "#91959c";
         ctx.fill();
         ctx.closePath();
