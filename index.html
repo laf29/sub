@@ -24,6 +24,8 @@
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
+      let sChullX = canvas.width / 2;
+      let sChullY = canvas.height - 30;
      // screen.orientation.lock(landscape);
 
     //  ctx.beginPath();
@@ -62,7 +64,7 @@
 
       function draw() {
         ctx.beginPath();
-        ctx.arc(50, 50, 6, 0, Math.PI * 2);
+        ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
         ctx.fillStyle = "#4d4e4f";
         ctx.fill();
         ctx.closePath();
