@@ -31,7 +31,7 @@
       let sChullX = 50;//canvas.width / 2;
       let sChullY = canvas.height / 2 + 20;
       let SubXChange = 2;
-      let SubYChange = -2;
+      let SubYChange = -0.5;
      // screen.orientation.lock(landscape);
 
     //  ctx.beginPath();
@@ -96,7 +96,7 @@
         drawSub();
         drawWaterO();
    //     sChullX += SubXChange;
-  //      sChullY += SubYChange;
+        sChullY += SubYChange;
       }
       //setInterval(draw, 10);
       function startGame() {
