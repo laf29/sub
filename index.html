@@ -43,13 +43,13 @@
     //  ctx.closePath();
 
       // Create a Gradient
-      const grd = ctx.createLinearGradient(100, 0, 100, 100);
-      grd.addColorStop(0, "#0c34c7");
-      grd.addColorStop(1, "#031554");
+  //    const grd = ctx.createLinearGradient(100, 0, 100, 100);
+//      grd.addColorStop(0, "#0c34c7");
+//      grd.addColorStop(1, "#031554");
 
       // Draw a filled Rectangle
-      ctx.fillStyle = grd;
-      ctx.fillRect(0, 50, 10000, 10000);
+      //ctx.fillStyle = grd;
+ //     ctx.fillRect(0, 50, 10000, 10000);
 
  //     ctx.beginPath();
  //     ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
@@ -62,7 +62,13 @@
  //     ctx.strokeStyle = "rgb(0 255 255 / 50%)";
  //     ctx.stroke();
 //      ctx.closePath();
-
+      function drawWater() {
+        const grd = ctx.createLinearGradient(100, 0, 100, 100);
+        grd.addColorStop(0, "#0c34c7");
+        grd.addColorStop(1, "#031554");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 40, canvas.width, canvas.height);
+      }
       function drawSub() {
         ctx.beginPath();
         ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
@@ -73,6 +79,7 @@
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawSub();
+        drawWater();
         sChullX += SubXChange;
         sChullY += SubYChange;
       }
