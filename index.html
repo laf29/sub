@@ -86,10 +86,13 @@
         ctx.beginPath();
         ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
         ctx.moveTo(sChullX - 16, sChullY - 6);
+        ctx.lineTo(sChullX - 10, sChullY - 6);
+        ctx.lineTo(sChullX - 10, sChullY - 8);
+        ctx.lineTo(sChullX - 3, sChullY - 8);
         ctx.lineTo(sChullX, sChullY - 6);
         ctx.lineTo(sChullX, sChullY + 6);
         ctx.lineTo(sChullX - 16, sChullY + 6);
-        ctx.lineTo(sChullX - 26, sChullY - 3);
+        ctx.lineTo(sChullX - 26, sChullY - 1);
         ctx.lineTo(sChullX - 16, sChullY - 6);
         //ctx.rect(sChullX - 16, sChullY - 6, 16, 12);
         ctx.fillStyle = "#91959c";
