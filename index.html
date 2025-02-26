@@ -23,9 +23,9 @@
     </style>
   </head>
   <body style="background-color: #8c7615;">
+    <!--<button id="runButton">Start game</button>-->
     <canvas id="myCanvas">Your browser cannot support this game.</canvas>
     <script>
-      <button id="runButton">Start game</button>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
       let sChullX = canvas.width / 2;
@@ -101,7 +101,7 @@
       function startGame() {
         setInterval(draw, 10);
       }
-
+      startGame();
       document.getElementById("runButton").addEventListener("click", function () {
         startGame();
         this.disabled = true;
