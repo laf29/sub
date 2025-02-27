@@ -34,6 +34,7 @@
       let SubXChange = 0;
       let SubYChange = 3;
       let SubAngle = 0;
+      let clicked = 0;
       
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -74,7 +75,6 @@
         ctx.fillStyle = "#91959c";
         ctx.fill();
         ctx.closePath();
-        
         ctx.beginPath();
         ctx.arc(sChullX, sChullY - 0.5, 2, 0, Math.PI * 2);
         ctx.arc(sChullX - 7, sChullY - 0.5, 2, 0, Math.PI * 2);
@@ -84,41 +84,26 @@
         ctx.closePath();
       }
       function clicked() {
-        //SubYChange = -10;
+        SubYChange = -10;
+        clicked = 1;
       }
-      function movingSub() {
-        document.onclick= function(event) {
-          
-          // Compensate for IE<9's non-standard event model
-          if (event===undefined) event= window.event;
-          var target= 'target' in event? event.target : event.srcElement;
-          if (target.tagName == "CANVAS") {
-            SubYChange = -10;
-          }
-          //alert('clicked on '+target.tagName);
-        };
-      }
-      function draw() {
+      function play() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater();
-        //SubYChange = 0.1;
-        //movingSub();
-        if (document.onclick == 1) {
-          SubYChange = -10;
-        } else {
-          SubYChange = 0.1;
-        }
         drawSub();
         drawWaterO();
-       // sChullX += SubXChange;
-        //sChullY += SubYChange;
+        if (clicked == 1) {
+          SubYChange = -10;
+          clicked = 0;
+        } else if (clicked == 0) {
+          SubYChange = 0.1;
+        }
         if (sChullY > 44 && sChullY < canvas.height - 6) {
             sChullY += SubYChange;
         }
       }
-      
       function startGame() {
-        setInterval(draw, 10);
+        setInterval(play, 10);
       }
       startGame();
     </script>
