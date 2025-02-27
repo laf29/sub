@@ -31,8 +31,8 @@
       const ctx = canvas.getContext("2d");
       let sChullX = 50;//canvas.width / 2;
       let sChullY = canvas.height / 2 + 80;
-      let SubXChange = 2;
-      let SubYChange = 0;
+      let SubXChange = 0;
+      let SubYChange = 3;
       let SubAngle = 0;
       
       function drawWater() {
@@ -85,9 +85,7 @@
       }
       function movingSub() {
         document.onclick= function(event) {
-          if (sChullY > 36) {
-            sChullY -= 3
-          }
+          SubYChange = -10;
           // Compensate for IE<9's non-standard event model
           //if (event===undefined) event= window.event;
           //var target= 'target' in event? event.target : event.srcElement;
@@ -98,11 +96,15 @@
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater();
+        SubYChange = 3;
         movingSub();
         drawSub();
         drawWaterO();
        // sChullX += SubXChange;
         //sChullY += SubYChange;
+        if (sChullY > 36 && sChullY < canvas.height - 6) {
+            sChullY += SubYChange;
+        }
       }
       
       function startGame() {
