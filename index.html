@@ -97,7 +97,10 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater();
         SubYChange = 0.1;
-        movingSub();
+        //movingSub();
+        document.onclick= function(event) {
+          SubYChange = -10;
+        };
         drawSub();
         drawWaterO();
        // sChullX += SubXChange;
