@@ -82,13 +82,21 @@
         ctx.fill();
         ctx.closePath();
       }
+      function movingSub() {
+        if (rightPressed) {
+          sChullY += 7;
+        } else {
+          sChullY -= 7;
+        }
+      }
       function draw() {
+        movingSub();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater();
         drawSub();
         drawWaterO();
-        sChullX += SubXChange;
-        sChullY += SubYChange;
+       // sChullX += SubXChange;
+  //      sChullY += SubYChange;
       }
       
       function startGame() {
