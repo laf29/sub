@@ -87,18 +87,20 @@
         drawSub();
         drawWaterO();
         if (clickedBG == 1) {
-          if (sChullY < canvas.height - 6) {
+          if (sChullY < canvas.height - 6 || sChullY > 44) {
+            //up
             SubYChange = -10;
           }
           clickedBG = 0;
         } else if (clickedBG == 0) {
-          if (sChullY > 44) {
+          if (sChullY < canvas.height - 6) {
+            //down
             SubYChange = 0.1;
           }
         }
-        if (sChullY > 44 && sChullY < canvas.height - 6) {
-            sChullY += SubYChange;
-        }
+        //if (sChullY > 44 && sChullY < canvas.height - 6) {
+        //    sChullY += SubYChange;
+        //}
       }
       function startGame() {
         setInterval(play, 10);
