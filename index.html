@@ -24,7 +24,7 @@
   </head>
   <body style="background-color: #8c7615;">
     <!--<button id="runButton">Start game</button>-->
-    <canvas id="myCanvas">Your browser cannot support this game.</canvas>
+    <canvas id="myCanvas" onclick="clicked()">Your browser cannot support this game.</canvas>
     <!--<canvas id="myCanvas" style="object-fit:contain;">Your browser cannot support this game.</canvas>-->
     <script>
       const canvas = document.getElementById("myCanvas");
@@ -83,6 +83,9 @@
         ctx.fill();
         ctx.closePath();
       }
+      function clicked() {
+        //SubYChange = -10;
+      }
       function movingSub() {
         document.onclick= function(event) {
           
@@ -100,7 +103,7 @@
         drawWater();
         //SubYChange = 0.1;
         //movingSub();
-        if (document.onclick == 0) {
+        if (document.onclick == 1) {
           SubYChange = -10;
         } else {
           SubYChange = 0.1;
