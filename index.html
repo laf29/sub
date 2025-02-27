@@ -85,11 +85,13 @@
       }
       function movingSub() {
         document.onclick= function(event) {
-          SubYChange = -10;
+          
           // Compensate for IE<9's non-standard event model
-          //if (event===undefined) event= window.event;
-          //var target= 'target' in event? event.target : event.srcElement;
-
+          if (event===undefined) event= window.event;
+          var target= 'target' in event? event.target : event.srcElement;
+          if (target.tagName == "CANVAS") {
+            SubYChange = -10;
+          }
           //alert('clicked on '+target.tagName);
         };
       }
