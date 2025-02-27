@@ -3,7 +3,7 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>SUB-SONAR SUBMARINE</title>
+    <title>SSS</title>
     <style>
       * {
         padding: 0;
@@ -34,7 +34,7 @@
       let SubXChange = 0;
       let SubYChange = 3;
       let SubAngle = 0;
-      let clicked = 0;
+      let clickedOnBG = 0;
       
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -83,7 +83,7 @@
         ctx.fill();
         ctx.closePath();
       }
-      function clicked() {
+      function clickedOnBG() {
         SubYChange = -10;
         clicked = 1;
       }
