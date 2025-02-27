@@ -89,14 +89,12 @@
         if (clickedBG == 1) {
           if (sChullY < canvas.height - 6) {
             SubYChange = -10;
-          } else {
-            SubYChange = 0.1;
           }
           clickedBG = 0;
         } else if (clickedBG == 0) {
-          if (sChullY > 44) {
+          //if (sChullY > 44) {
             SubYChange = 0.1;
-          }
+         // }
         }
         //if (sChullY > 44 && sChullY < canvas.height - 6) {
             sChullY += SubYChange;
