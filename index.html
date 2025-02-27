@@ -87,12 +87,12 @@
         drawSub();
         drawWaterO();
         if (clickedBG == 1) {
-          if (sChullY < canvas.height - 6) {
+          if (sChullY > 44) {
             SubYChange = -10;
           }
           clickedBG = 0;
         } else if (clickedBG == 0) {
-          if (sChullY > 44) {
+          if (sChullY < canvas.height - 6) {
             SubYChange = 0.1;
           }
         }
