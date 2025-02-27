@@ -32,45 +32,8 @@
       let sChullX = 50;//canvas.width / 2;
       let sChullY = canvas.height / 2 + 80;
       let SubXChange = 2;
-      let SubYChange = -0.5;
-
-
-
+      let SubYChange = 0;
       
-     // screen.orientation.lock(landscape);
-
-    //  ctx.beginPath();
-  //    ctx.rect(20, 40, 50, 50);
- //     ctx.fillStyle = "#FA33F2";
- //     ctx.fill();
- //     ctx.closePath();
-
-    //  ctx.beginPath();
-    //  ctx.rect(0, 75, 10000, 10000);
-    //  ctx.fillStyle = "#rgba(50 0 255 / 50%)";
-    //  ctx.fill();
-    //  ctx.closePath();
-
-      // Create a Gradient
-  //    const grd = ctx.createLinearGradient(100, 0, 100, 100);
-//      grd.addColorStop(0, "#0c34c7");
-//      grd.addColorStop(1, "#031554");
-
-      // Draw a filled Rectangle
-      //ctx.fillStyle = grd;
- //     ctx.fillRect(0, 50, 10000, 10000);
-
- //     ctx.beginPath();
- //     ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
-  //    ctx.fillStyle = "green";
-//      ctx.fill();     
-    //  ctx.closePath();
-      
- //     ctx.beginPath();
-  //    ctx.rect(160, 10, 100, 40);
- //     ctx.strokeStyle = "rgb(0 255 255 / 50%)";
- //     ctx.stroke();
-//      ctx.closePath();
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
         grd.addColorStop(0, "#0c34c7");
@@ -124,18 +87,14 @@
         drawWater();
         drawSub();
         drawWaterO();
-   //     sChullX += SubXChange;
+        sChullX += SubXChange;
         sChullY += SubYChange;
       }
-      //setInterval(draw, 10);
+      
       function startGame() {
         setInterval(draw, 10);
       }
       startGame();
-      document.getElementById("runButton").addEventListener("click", function () {
-        startGame();
-        this.disabled = true;
-      });
     </script>
   </body>
 </html>
