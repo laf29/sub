@@ -83,7 +83,10 @@
         ctx.closePath();
       }
       function movingSub() {
-        if (rightPressed) {
+        let spacePressed = false;
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+        if (spacePressed == true) {
           sChullY += 7;
         } else {
           sChullY -= 7;
