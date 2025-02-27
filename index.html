@@ -26,7 +26,7 @@
       let sChullX = 50;
       let sChullY = canvas.height / 2 + 0;
       let SubXChange = 0;
-      let SubYChange = 3;
+      let SubYChange = 0;
       let SubAngle = 0;
       let clickedBG = 0;
       
@@ -78,7 +78,7 @@
         ctx.closePath();
       }
       function clickedOnBG() {
-        SubYChange = -10;
+        SubYChange = -6;
         clickedBG = 1;
       }
       function play() {
