@@ -24,7 +24,7 @@
   </head>
   <body style="background-color: #8c7615;">
     <!--<button id="runButton">Start game</button>-->
-    <canvas id="myCanvas" onclick="clicked()">Your browser cannot support this game.</canvas>
+    <canvas id="myCanvas" onclick="clickedOnBG()">Your browser cannot support this game.</canvas>
     <!--<canvas id="myCanvas" style="object-fit:contain;">Your browser cannot support this game.</canvas>-->
     <script>
       const canvas = document.getElementById("myCanvas");
@@ -34,7 +34,7 @@
       let SubXChange = 0;
       let SubYChange = 3;
       let SubAngle = 0;
-      let clickedOnBG = 0;
+      let clickedBG = 0;
       
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -92,10 +92,10 @@
         drawWater();
         drawSub();
         drawWaterO();
-        if (clicked == 1) {
+        if (clickedBG == 1) {
           SubYChange = -10;
-          clicked = 0;
-        } else if (clicked == 0) {
+          clickedBG = 0;
+        } else if (clickedBG == 0) {
           SubYChange = 0.1;
         }
         if (sChullY > 44 && sChullY < canvas.height - 6) {
