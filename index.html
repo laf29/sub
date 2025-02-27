@@ -16,20 +16,14 @@
         height: 87vh;
         width: 100vw;
       }
-      button {
-        display: block;
-        background: #FFFFFF;
-      }
     </style>
   </head>
   <body style="background-color: #8c7615;">
-    <!--<button id="runButton">Start game</button>-->
     <canvas id="myCanvas" onclick="clickedOnBG()">Your browser cannot support this game.</canvas>
-    <!--<canvas id="myCanvas" style="object-fit:contain;">Your browser cannot support this game.</canvas>-->
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
-      let sChullX = 50;//canvas.width / 2;
+      let sChullX = 50;
       let sChullY = canvas.height / 2 + 0;
       let SubXChange = 0;
       let SubYChange = 3;
@@ -85,7 +79,7 @@
       }
       function clickedOnBG() {
         SubYChange = -10;
-        clicked = 1;
+        clickedBG = 1;
       }
       function play() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
