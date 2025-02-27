@@ -84,7 +84,9 @@
       }
       function movingSub() {
         document.onclick= function(event) {
-          sChullY -= 3
+          if (sChullY > 40) {
+            sChullY -= 3
+          }
           // Compensate for IE<9's non-standard event model
           //if (event===undefined) event= window.event;
           //var target= 'target' in event? event.target : event.srcElement;
