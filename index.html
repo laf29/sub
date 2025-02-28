@@ -118,7 +118,14 @@
         drawSub();
         //drawWaterO();
         if (clickedBG == 1) {
-          if (sChullY < canvas.height - 6 || sChullY > 40) {
+          if (sChullY > 40) {
+            //up
+            //SubYChange = -10;
+            sChullY -= 10;
+            SubAngle = Math.PI / 4;
+            drawSubR();
+          }
+          if (sChullY < canvas.height - 5) {
             //up
             //SubYChange = -10;
             sChullY -= 10;
