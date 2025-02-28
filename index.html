@@ -122,13 +122,15 @@
             //up
             //SubYChange = -10;
             sChullY -= 10;
+          } else if (sChullY <= 44) { 
+            sChullY += 0.1;
           }
           clickedBG = 0;
         }  else if (clickedBG == 0) {
           if (sChullY < canvas.height - 6) {
             //down
             //SubYChange = 0.1;
-            sChullY += 0.1
+            sChullY += 0.1;
           }
         }
         //if (sChullY > 44 && sChullY < canvas.height - 6) {
