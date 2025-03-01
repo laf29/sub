@@ -119,14 +119,14 @@
         ctx.restore();
       }
       function SubUp() {
-        drawSubR(345, sChullY -= 7)
+        drawSubR(345, sChullY -= 7);
         timerSub = 100;
       }
       function SubDown() {
         if (timerSub == 0) {
-          drawSubR(0, sChullY += 0.1)
+          drawSubR(0, sChullY += 0.1);
         } else {
-          drawSubR(345, sChullY -= 0.05)
+          drawSubR(345, sChullY -= 0.05);
           timerSub -= 1;
       }
       function clickedOnBG() {
@@ -141,12 +141,12 @@
         } else {
           SubDown();
         }
-        if (clickedBG == 0) {
-          SubDown();
-        }
+    //    if (clickedBG == 0) {
+    //      SubDown();
+   //     }
         drawWaterO();
         if (sChullY >= canvas.height - 5) {
-          clearInterval(play)
+          clearInterval(play);
         }
       }
       function startGame() {
