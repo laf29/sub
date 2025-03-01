@@ -24,9 +24,6 @@
       const ctx = canvas.getContext("2d");
       let sChullX = 50;
       let sChullY = canvas.height / 2 + 0;
-      let SubXChange = 0;
-      let SubYChange = 0;
-      let SubAngle = 0;
       let clickedBG = 0;
       var deg = Math.PI/180;
       
@@ -123,7 +120,6 @@
         drawSubR(0, sChullY += 0.1)
       }
       function clickedOnBG() {
-        SubYChange = -6;
         clickedBG = 1;
       }
       function play() {
@@ -132,6 +128,8 @@
         if (clickedBG == 1) {
           SubUp();
           clickedBG = 0;
+        } else {
+          SubDown();
         }
         if (clickedBG == 0) {
           SubDown();
