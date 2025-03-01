@@ -118,10 +118,10 @@
         ctx.restore();
       }
       function SubUp() {
-        drawSubR(45, sChullY -= 10)
+        drawSubR(15, sChullY -= 10)
       }
       function SubDown() {
-        drawSubR(270, sChullY += 0.1)
+        drawSubR(345, sChullY += 0.1)
       }
       function clickedOnBG() {
         SubYChange = -6;
@@ -130,7 +130,7 @@
       function play() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater();
-        drawSub();
+  //      drawSub();
         //drawWaterO();
         if (clickedBG == 1) {
           SubUp();
