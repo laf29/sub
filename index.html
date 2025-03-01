@@ -39,7 +39,7 @@
       }
       function drawWaterO() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
-        ctx.globalAlpha = 0.2;
+        ctx.globalAlpha = 0.5;
         grd.addColorStop(0, "#0c34c7");
         grd.addColorStop(1, "#031554");
         ctx.fillStyle = grd;
@@ -120,7 +120,7 @@
         drawSubR(15, sChullY -= 10)
       }
       function SubDown() {
-        drawSubR(345, sChullY += 0.1)
+        drawSubR(0, sChullY += 0.1)
       }
       function clickedOnBG() {
         SubYChange = -6;
