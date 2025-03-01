@@ -137,6 +137,9 @@
           SubDown();
         }
         drawWaterO();
+        if (sChullY == canvas.height - 6) {
+          clearInterval(play)
+        }
       }
       function startGame() {
         setInterval(play, 10);
