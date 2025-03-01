@@ -27,7 +27,9 @@
       let sChullY = canvas.height / 2 - 20;
       let clickedBG = 0;
       let moveSub = 0;
+      let subAngle = 0;
       var deg = Math.PI/180;
+      var sandY = canvas.height - 6;
       
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -76,10 +78,10 @@
         ctx.fill();
         ctx.closePath();
       }
-      function drawSubR(angl) { 
+      function drawSubR() { 
         ctx.save();
         ctx.translate(50, sChullY - 10);
-        ctx.rotate(angl * deg);
+        ctx.rotate(subAngle * deg);
 
         ctx.beginPath();
         ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
@@ -113,6 +115,40 @@
 
         ctx.restore();
       }
+
+
+      function moveSub() {
+        if (sChullY <= sandY) {
+          if (sChullY >= 40) {
+            if (clickedBG == 1) {
+              moveSub += 6;
+              subAngle = 345;
+            } 
+          }
+          sChullY += moveSub;
+          drawSubR()
+        }
+      }
+      function play() {
+        clear();
+        moveSub();
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
       function SubUp() {
         drawSubR(345);
       }
@@ -125,11 +161,13 @@
       }
       function clear() {
         ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
+//        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.restore();
+        moveSub = 0.1;
+        subAngle = 0;
       }
-      function play() {
+      function playOld() {
         clear();
         drawWater();
         if (clickedBG == 1) {
@@ -146,6 +184,9 @@
           clearInterval(play);
         }
       }
+
+
+      
       function startGame() {
         setInterval(play, 10);
       }
