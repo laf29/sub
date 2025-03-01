@@ -115,15 +115,10 @@
       }
       function SubUp() {
         drawSubR(345, sChullY -= 7);
-        timerSub = 100;
       }
       function SubDown() {
-        if (timerSub == 0) {
-          sChullY += 0.1;
-          drawSub();
-        } else {
-          drawSubR(345, sChullY -= 0.05);
-          timerSub -= 1;
+        sChullY += 0.1;
+        drawSub();
       }
       function clickedOnBG() {
         clickedBG = 1;
