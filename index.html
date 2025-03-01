@@ -26,7 +26,7 @@
       let sChullX = 50;
       let sChullY = canvas.height / 2 - 20;
       let clickedBG = 0;
-      let timerSub = 0;
+      let moveSub = 0;
       var deg = Math.PI/180;
       
       function drawWater() {
@@ -76,7 +76,7 @@
         ctx.fill();
         ctx.closePath();
       }
-      function drawSubR(angl, ypos) { 
+      function drawSubR(angl) { 
         ctx.save();
         ctx.translate(50, sChullY - 10);
         ctx.rotate(angl * deg);
@@ -114,7 +114,7 @@
         ctx.restore();
       }
       function SubUp() {
-        drawSubR(345, sChullY -= 7);
+        drawSubR(345);
       }
       function SubDown() {
         sChullY += 0.1;
