@@ -77,13 +77,8 @@
         ctx.closePath();
       }
       function drawSubR(angl, ypos) { 
-
         ctx.save();
-        if (angl == 345) {
-          ctx.translate(0, 0);
-        } else {
-          ctx.translate(0, 0);
-        }
+        ctx.translate(50, sChullY - 10);
         ctx.rotate(angl * deg);
 
         ctx.beginPath();
@@ -124,7 +119,8 @@
       }
       function SubDown() {
         if (timerSub == 0) {
-          drawSubR(0, sChullY += 0.1);
+          sChullY += 0.1;
+          drawSub();
         } else {
           drawSubR(345, sChullY -= 0.05);
           timerSub -= 1;
@@ -132,8 +128,14 @@
       function clickedOnBG() {
         clickedBG = 1;
       }
-      function play() {
+      function clear() {
+        ctx.save();
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.restore();
+      }
+      function play() {
+        clear();
         drawWater();
         if (clickedBG == 1) {
           SubUp();
