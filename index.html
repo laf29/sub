@@ -78,36 +78,32 @@
         ctx.fill();
         ctx.closePath();
       }
-      function drawSubR() { 
+      function drawSubR(angl, ypos) { 
 
         ctx.save();
 
-        ctx.translate(cx, cy);
-        ctx.rotate(45 * deg);
+        ctx.translate(0, ypos);
+        ctx.rotate(angl * deg);
 
-        ctx.fillRect(x, y, w, h);
-
-        ctx.restore();
-        
         ctx.beginPath();
         ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
-        ctx.moveTo((sChullX - 16 )* Math.cos(SubAngle), (sChullY - 5 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 8 )* Math.cos(SubAngle), (sChullY - 6 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 12 )* Math.cos(SubAngle), (sChullY - 6) * Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 10 )* Math.cos(SubAngle), (sChullY - 9) * Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 4 )* Math.cos(SubAngle), (sChullY - 9) * Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 3 )* Math.cos(SubAngle), (sChullY - 6 )* Math.sin(SubAngle));
-        ctx.lineTo(sChullX * Math.cos(SubAngle), (sChullY - 6 )* Math.sin(SubAngle));
-        ctx.lineTo(sChullX * Math.cos(SubAngle), (sChullY + 6 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 16) * Math.cos(SubAngle), (sChullY + 6 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 31) * Math.cos(SubAngle), (sChullY + 2 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 33) * Math.cos(SubAngle), (sChullY + 4 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 36 )* Math.cos(SubAngle), (sChullY + 4 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 35 )* Math.cos(SubAngle), (sChullY - 1) * Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 36 )* Math.cos(SubAngle),( sChullY - 5 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 33 )* Math.cos(SubAngle), (sChullY - 5 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 31) * Math.cos(SubAngle), (sChullY - 2 )* Math.sin(SubAngle));
-        ctx.lineTo((sChullX - 16 )* Math.cos(SubAngle), (sChullY - 5 )* Math.sin(SubAngle));
+        ctx.moveTo(sChullX - 16, sChullY - 5);
+        ctx.lineTo(sChullX - 8, sChullY - 6);
+        ctx.lineTo(sChullX - 12, sChullY - 6);
+        ctx.lineTo(sChullX - 10, sChullY - 9);
+        ctx.lineTo(sChullX - 4, sChullY - 9);
+        ctx.lineTo(sChullX - 3, sChullY - 6);
+        ctx.lineTo(sChullX, sChullY - 6);
+        ctx.lineTo(sChullX, sChullY + 6);
+        ctx.lineTo(sChullX - 16, sChullY + 6);
+        ctx.lineTo(sChullX - 31, sChullY + 2);
+        ctx.lineTo(sChullX - 33, sChullY + 4);
+        ctx.lineTo(sChullX - 36, sChullY + 4);
+        ctx.lineTo(sChullX - 35, sChullY - 1);
+        ctx.lineTo(sChullX - 36, sChullY - 5);
+        ctx.lineTo(sChullX - 33, sChullY - 5);
+        ctx.lineTo(sChullX - 31, sChullY - 2);
+        ctx.lineTo(sChullX - 16, sChullY - 5);
         ctx.fillStyle = "#91959c";
         ctx.fill();
         ctx.closePath();
@@ -118,12 +114,14 @@
         ctx.fillStyle = "#4287f5";
         ctx.fill();
         ctx.closePath();
+
+        ctx.restore();
       }
       function SubUp() {
-        
+        drawSubR(45, sChullY -= 10)
       }
       function SubDown() {
-
+        drawSubR(270, sChullY += 0.1)
       }
       function clickedOnBG() {
         SubYChange = -6;
@@ -136,32 +134,32 @@
         //drawWaterO();
         if (clickedBG == 1) {
           SubUp();
-          if (sChullY > 40) {
+//          if (sChullY > 40) {
           
             //up
             //SubYChange = -10;
-            sChullY -= 10;
-            SubAngle = Math.PI / 4;
-            drawSubR();
-          }
-          if (sChullY < canvas.height - 7) {
-            //up
+//            sChullY -= 10;
+//            SubAngle = Math.PI / 4;
+//            drawSubR();
+ //         }
+//          if (sChullY < canvas.height - 7) {
+//            //up
             //SubYChange = -10;
-            sChullY -= 10;
-            SubAngle = Math.PI / 4;
-            drawSubR();
-          }
+//          sChullY -= 10;
+//            SubAngle = Math.PI / 4;
+//            drawSubR();
+ //         }
           clickedBG = 0;
         }  //else 
         if (clickedBG == 0) {
           SubDown();
-          if (sChullY < canvas.height - 6) {
+ //         if (sChullY < canvas.height - 6) {
             //down
             //SubYChange = 0.1;
-            sChullY += 0.1;
-            SubAngle = 2 * Math.PI / 4;
-            drawSubR();
-          }
+//            sChullY += 0.1;
+//            SubAngle = 2 * Math.PI / 4;
+//            drawSubR();
+     //     }
         }
         drawWaterO();
         //if (sChullY > 44 && sChullY < canvas.height - 6) {
