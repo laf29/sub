@@ -26,6 +26,7 @@
       let sChullX = 50;
       let sChullY = canvas.height / 2 + 0;
       let clickedBG = 0;
+      let timerSub = 0;
       var deg = Math.PI/180;
       
       function drawWater() {
@@ -119,9 +120,14 @@
       }
       function SubUp() {
         drawSubR(345, sChullY -= 7)
+        timerSub = 100;
       }
       function SubDown() {
-        drawSubR(0, sChullY += 0.1)
+        if (timerSub == 0) {
+          drawSubR(0, sChullY += 0.1)
+        } else {
+          drawSubR(345, sChullY -= 0.05)
+          timerSub -= 1;
       }
       function clickedOnBG() {
         clickedBG = 1;
