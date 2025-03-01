@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- Sea: #043585 -->
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
@@ -130,41 +129,14 @@
       function play() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater();
-  //      drawSub();
-        //drawWaterO();
         if (clickedBG == 1) {
           SubUp();
-//          if (sChullY > 40) {
-          
-            //up
-            //SubYChange = -10;
-//            sChullY -= 10;
-//            SubAngle = Math.PI / 4;
-//            drawSubR();
- //         }
-//          if (sChullY < canvas.height - 7) {
-//            //up
-            //SubYChange = -10;
-//          sChullY -= 10;
-//            SubAngle = Math.PI / 4;
-//            drawSubR();
- //         }
           clickedBG = 0;
-        }  //else 
+        }
         if (clickedBG == 0) {
           SubDown();
- //         if (sChullY < canvas.height - 6) {
-            //down
-            //SubYChange = 0.1;
-//            sChullY += 0.1;
-//            SubAngle = 2 * Math.PI / 4;
-//            drawSubR();
-     //     }
         }
         drawWaterO();
-        //if (sChullY > 44 && sChullY < canvas.height - 6) {
-        //    sChullY += SubYChange;
-        //}
       }
       function startGame() {
         setInterval(play, 10);
