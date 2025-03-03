@@ -118,10 +118,10 @@
 
 
       function moveSub() {
-        if (sChullY <= sandY) {
+        if (sChullY < sandY) {
           if (sChullY >= 40) {
             if (clickedBG == 1) {
-              moveSub += 6;
+              moveSub -= 6;
               subAngle = 345;
             } 
           }
