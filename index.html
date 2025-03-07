@@ -27,7 +27,10 @@
       let sChullY = canvas.height / 2;
       let clickedBG = 0;
       let moveSub = 0;
-      let subAngle = 0;
+      let subAngle = 360;
+      let movedSub = 0;
+      let movingUp = 0;
+      let movingDown = 0;
       var deg = Math.PI/180;
       var sandY = canvas.height - 6;
       
@@ -116,24 +119,63 @@
         ctx.restore();
       }
 
+      function animateSubUp() {
+        clear();
+        drawWater();
+        movingUp = 1;
+        if (subAngle > 345) {
+          subAngle -= 3;
+        }
+        sChullY -= 1;
+        movedSub += 1;
+        drawSubR();
+        drawWaterO();
+        if (moveSub == 6) {
+          movingUp = 0;
+          clearInterval(animateSubUp);
+        }
+      }
+
+      function animateSubDown() {
+        clear();
+        drawWater();
+        movingDown = 1;
+        if (subAngle < 360) {
+          subAngle += 1;
+        }
+        sChullY += 0.1;
+        movedSub += 1;
+        drawSubR();
+        drawWaterO();
+        if (moveSub == 6) {
+          movingDown = 0;
+          clearInterval(animateSubDown);
+        }
+      }
 
       function moveSubFunc() {
         if (sChullY < sandY) {
           if (sChullY >= 40) {
             if (clickedBG == 1) {
-              moveSub -= 6;
-              subAngle = 345;
-            } 
+              if (movingDown == 0) {
+                movedSub = 0;
+                setInterval(animateSubUp, 10);
+              }
+            } else {
+              if (movingUp == 0) {
+                movedSub = 0;
+                setInterval(animateSubDown, 10);
+              }
+            }
           }
-          sChullY += moveSub;
-          drawSubR();
+         // drawSubR();
         }
       }
       function play() {
-        clear();
-        drawWater();
+  //      clear();
+      //  drawWater();
         moveSubFunc();
-        drawWaterO();
+        //drawWaterO();
       }
 
 
@@ -167,7 +209,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.restore();
         moveSub = 0.1;
-        subAngle = 0;
+        //subAngle = 0;
       }
       function playOld() {
         clear();
