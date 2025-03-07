@@ -132,7 +132,7 @@
         drawWaterO();
         if (movedSub == 6) {
           movingUp = 0;
-          clearInterval(animateSubUp);
+          clearInterval(animateUp);
         }
       }
 
@@ -149,7 +149,7 @@
         drawWaterO();
         if (movedSub == 6) {
           movingDown = 0;
-          clearInterval(animateSubDown);
+          clearInterval(animateDown);
         }
       }
 
@@ -160,13 +160,13 @@
             if (clickedBG == 1) {
               if (movingDown == 0) {
                 movedSub = 0;
-                setInterval(animateSubUp, 10);
+                const animateUp = setInterval(animateSubUp, 10);
               }
               clickedBG = 0;
             } else {
               if (movingUp == 0) {
                 movedSub = 0;
-                setInterval(animateSubDown, 10);
+                const animateDown = setInterval(animateSubDown, 10);
               }
             }
           }
