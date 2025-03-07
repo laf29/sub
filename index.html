@@ -192,22 +192,22 @@
       function clickedOnBG() {
         clickedBG = 1;
       }
-/*
+
 
 
 
       
       function SubUp() {
-        drawSubR(345);
+       // drawSubR(345);
       }
       function SubDown() {
-        sChullY += 0.1;
-        drawSub();
+    //    sChullY += 0.1;
+      //  drawSub();
       }
       function clickedOnBG() {
         clickedBG = 1;
       }
-      function clear() {
+      function clearOld() {
         ctx.save();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -228,7 +228,7 @@
     //    if (clickedBG == 0) {
     //      SubDown();
    //     }
-   */
+   
         //drawWaterO();
         if (sChullY >= canvas.height - 5) {
           clearInterval(play);
