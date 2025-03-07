@@ -153,6 +153,7 @@
         }
       }
 
+      
       function moveSubFunc() {
         if (sChullY < sandY) {
           if (sChullY >= 40) {
@@ -180,16 +181,13 @@
       }
 
 
-
-
-
-
-
-
-
-
-
-
+function clear() {
+        ctx.save();
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.restore();
+      }
+/*
 
 
 
@@ -221,9 +219,11 @@
         } else {
           SubDown();
         }
+        
     //    if (clickedBG == 0) {
     //      SubDown();
    //     }
+   */
         drawWaterO();
         if (sChullY >= canvas.height - 5) {
           clearInterval(play);
