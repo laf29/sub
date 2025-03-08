@@ -18,6 +18,7 @@
       }
     </style>
   </head>
+  <div onmousedown="mDown(this)" onmouseup="mUp(this)" style=";width:100vw;height:100vh;"></div>
   <body style="background-color: #8c7615;">
     <canvas id="myCanvas" onclick="clickedOnBG()">Your browser cannot support this game.</canvas>
     <script>
@@ -33,7 +34,15 @@
       let movingDown = 0;
       var deg = Math.PI/180;
       var sandY = canvas.height - 6;
-      
+
+      function mDown () {
+        const ctxt = canvas.getContext("2d");
+        ctxt.beginPath();
+        ctxt.rect(20, 20, 30, 50);
+        ctxt.stroke();
+      }
+      function mUp () {
+      }
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
         grd.addColorStop(0, "#0c34c7");
