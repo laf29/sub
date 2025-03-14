@@ -18,13 +18,11 @@
       }
     </style>
   </head>
-  <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="width:100vw;height:100vh;"></div>
   <body style="background-color: #8c7615;">
-    <canvas id="myCanvas" onclick="clickedOnBG()">Your browser cannot support this game.</canvas>
+    <canvas id="myCanvas" onmousedown="mDown()" onmouseup="mUp()">Your browser cannot support this game.</canvas>
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
-      let sChullX = 30;
       let sChullY = 40;
       let clickedBG = 0;
       let moveSub = 0;
@@ -59,73 +57,40 @@
         ctx.fillRect(0, 40, canvas.width, canvas.height);
         ctx.globalAlpha = 1;
       }
-      function drawSub() {
+      function drawSubR(subMoveAngle) { 
+        //ctx.save();
+        ctx.rotate(subMoveAngle * deg);
+        ctx.translate(20, sChullY);
         ctx.beginPath();
-        ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
-        ctx.moveTo(sChullX - 16, sChullY - 5);
-        ctx.lineTo(sChullX - 8, sChullY - 6);
-        ctx.lineTo(sChullX - 12, sChullY - 6);
-        ctx.lineTo(sChullX - 10, sChullY - 9);
-        ctx.lineTo(sChullX - 4, sChullY - 9);
-        ctx.lineTo(sChullX - 3, sChullY - 6);
-        ctx.lineTo(sChullX, sChullY - 6);
-        ctx.lineTo(sChullX, sChullY + 6);
-        ctx.lineTo(sChullX - 16, sChullY + 6);
-        ctx.lineTo(sChullX - 31, sChullY + 2);
-        ctx.lineTo(sChullX - 33, sChullY + 4);
-        ctx.lineTo(sChullX - 36, sChullY + 4);
-        ctx.lineTo(sChullX - 35, sChullY - 1);
-        ctx.lineTo(sChullX - 36, sChullY - 5);
-        ctx.lineTo(sChullX - 33, sChullY - 5);
-        ctx.lineTo(sChullX - 31, sChullY - 2);
-        ctx.lineTo(sChullX - 16, sChullY - 5);
+        ctx.arc(0, 0, 6, 0, Math.PI * 2);
+        ctx.moveTo(-16, -5);
+        ctx.lineTo(-8, -6);
+        ctx.lineTo(-12, -6);
+        ctx.lineTo(-10, -9);
+        ctx.lineTo(-4, -9);
+        ctx.lineTo(-3, -6);
+        ctx.lineTo(0, -6);
+        ctx.lineTo(0, 6);
+        ctx.lineTo(-16, 6);
+        ctx.lineTo(-31, 2);
+        ctx.lineTo(-33, 4);
+        ctx.lineTo(-36, 4);
+        ctx.lineTo(-35, -1);
+        ctx.lineTo(-36, -5);
+        ctx.lineTo(-33, -5);
+        ctx.lineTo(-31, -2);
+        ctx.lineTo(-16, -5);
         ctx.fillStyle = "#91959c";
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
-        ctx.arc(sChullX, sChullY - 0.5, 2, 0, Math.PI * 2);
-        ctx.arc(sChullX - 7, sChullY - 0.5, 2, 0, Math.PI * 2);
-        ctx.arc(sChullX - 14, sChullY - 0.5, 2, 0, Math.PI * 2);
+        ctx.arc(0, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(-7, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(-14, -0.5, 2, 0, Math.PI * 2);
         ctx.fillStyle = "#4287f5";
         ctx.fill();
         ctx.closePath();
-      }
-      function drawSubR() { 
-        ctx.save();
-        ctx.translate(50, sChullY - 10);
-        ctx.rotate(subAngle * deg);
-
-        ctx.beginPath();
-        ctx.arc(sChullX, sChullY, 6, 0, Math.PI * 2);
-        ctx.moveTo(sChullX - 16, sChullY - 5);
-        ctx.lineTo(sChullX - 8, sChullY - 6);
-        ctx.lineTo(sChullX - 12, sChullY - 6);
-        ctx.lineTo(sChullX - 10, sChullY - 9);
-        ctx.lineTo(sChullX - 4, sChullY - 9);
-        ctx.lineTo(sChullX - 3, sChullY - 6);
-        ctx.lineTo(sChullX, sChullY - 6);
-        ctx.lineTo(sChullX, sChullY + 6);
-        ctx.lineTo(sChullX - 16, sChullY + 6);
-        ctx.lineTo(sChullX - 31, sChullY + 2);
-        ctx.lineTo(sChullX - 33, sChullY + 4);
-        ctx.lineTo(sChullX - 36, sChullY + 4);
-        ctx.lineTo(sChullX - 35, sChullY - 1);
-        ctx.lineTo(sChullX - 36, sChullY - 5);
-        ctx.lineTo(sChullX - 33, sChullY - 5);
-        ctx.lineTo(sChullX - 31, sChullY - 2);
-        ctx.lineTo(sChullX - 16, sChullY - 5);
-        ctx.fillStyle = "#91959c";
-        ctx.fill();
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(sChullX, sChullY - 0.5, 2, 0, Math.PI * 2);
-        ctx.arc(sChullX - 7, sChullY - 0.5, 2, 0, Math.PI * 2);
-        ctx.arc(sChullX - 14, sChullY - 0.5, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "#4287f5";
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.restore();
+     //   ctx.restore();
       }
 
       function animateSubUp() {
