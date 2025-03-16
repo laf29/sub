@@ -40,7 +40,6 @@
         ctxt.stroke();
       }
       function mUp () {
-        
       }
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -61,7 +60,6 @@
       function drawSubR(subMoveAngle) { 
         clear();
         drawWater();
-        //ctx.save();
         ctx.rotate(subMoveAngle * deg);
         ctx.translate(50, sChullY);
         ctx.beginPath();
@@ -86,8 +84,6 @@
         ctx.fillStyle = "#91959c";
         ctx.fill();
         ctx.closePath();
-     //   ctx.rotate(subMoveAngle * deg);
-    //    ctx.translate(20, sChullY);
         ctx.beginPath();
         ctx.arc(0, -0.5, 2, 0, Math.PI * 2);
         ctx.arc(-7, -0.5, 2, 0, Math.PI * 2);
@@ -95,7 +91,6 @@
         ctx.fillStyle = "#4287f5";
         ctx.fill();
         ctx.closePath();
-     //   ctx.restore();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         drawWaterO();
       }
