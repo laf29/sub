@@ -99,6 +99,15 @@
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         drawWaterO();
       }
+      function clear() {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      drawSubR(360);
+
+
+      /*
+----------------- O L D   V E R S I O N S ---------------------
 
       function animateSubUp() {
         clear();
@@ -157,66 +166,11 @@
 
       
       function play() {
-  //      clear();
-      //  drawWater();
         moveSubFunc();
-        //drawWaterO();
       }
 
-
-      function clear() {
-        //ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //ctx.restore();
-      }
-
+*/
       
-      function SubUp() {
-       // drawSubR(345);
-      }
-      function SubDown() {
-    //    sChullY += 0.1;
-      //  drawSub();
-      }
-      function clickedOnBG() {
-        clickedBG = 1;
-      }
-      function clearOld() {
-        ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.restore();
-        moveSub = 0.1;
-        //subAngle = 0;
-      }
-      function playOld() {
-        clear();
-        drawWater();
-        if (clickedBG == 1) {
-          SubUp();
-          clickedBG = 0;
-        } else {
-          SubDown();
-        }
-        
-    //    if (clickedBG == 0) {
-    //      SubDown();
-   //     }
-   
-        //drawWaterO();
-        if (sChullY >= canvas.height - 5) {
-          clearInterval(play);
-        }
-      }
-
-
-      
-     // function startGame() {
-      //  setInterval(play, 10);
-//      }
-      //startGame();
-      drawSubR(360);
     </script>
   </body>
 </html>
