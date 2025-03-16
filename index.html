@@ -40,6 +40,10 @@
         ctxt.stroke();
       }
       function mUp () {
+        const cntxt = canvas.getContext("2d");
+        cntxt.beginPath();
+        cntxt.rect(10, 10, 20, 30);
+        cntxt.stroke();
       }
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
