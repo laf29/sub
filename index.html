@@ -35,10 +35,8 @@
       var sandY = canvas.height - 6;
 
       function mDown () {
-        const ctxt = canvas.getContext("2d");
-        ctxt.beginPath();
-        ctxt.rect(20, 20, 30, 50);
-        ctxt.stroke();
+        sChullY += 6;
+        drawSubR(345);
       }
       function mUp () {
       }
