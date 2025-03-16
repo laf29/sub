@@ -83,6 +83,8 @@
         ctx.fillStyle = "#91959c";
         ctx.fill();
         ctx.closePath();
+        ctx.rotate(subMoveAngle * deg);
+        ctx.translate(20, sChullY);
         ctx.beginPath();
         ctx.arc(0, -0.5, 2, 0, Math.PI * 2);
         ctx.arc(-7, -0.5, 2, 0, Math.PI * 2);
@@ -137,7 +139,7 @@
                 const animateUp = setInterval(animateSubUp, 10);
               }
               clickedBG = 0;
-            } else {
+            } else if (clickedBG==0) {
               if (movingUp == 0) {
                 movedSub = 0;
                 const animateDown = setInterval(animateSubDown, 10);
@@ -158,18 +160,11 @@
 
 
       function clear() {
-        ctx.save();
+        //ctx.save();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.restore();
-        document.getElementById("myCanvas").style.transformOrigin
+        //ctx.restore();
       }
-      function clickedOnBG() {
-        clickedBG = 1;
-      }
-
-
-
 
       
       function SubUp() {
@@ -212,10 +207,11 @@
 
 
       
-      function startGame() {
-        setInterval(play, 10);
-      }
-      startGame();
+     // function startGame() {
+      //  setInterval(play, 10);
+//      }
+      //startGame();
+      drawSubR(360);
     </script>
   </body>
 </html>
