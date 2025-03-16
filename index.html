@@ -30,6 +30,7 @@
       let movedSub = 0;
       let movingUp = 0;
       let movingDown = 0;
+      let milliTime = 0;
       var deg = Math.PI/180;
       var sandY = canvas.height - 6;
 
@@ -98,8 +99,11 @@
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
+      function timer() {
+        milliTime ++;
+      }
+      setInterval(timer,1)
       drawSubR(360);
-
 
       /*
 ----------------- O L D   V E R S I O N S ---------------------
