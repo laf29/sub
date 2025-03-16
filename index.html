@@ -23,7 +23,7 @@
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
-      let sChullY = 40;
+      let sChullY = 60;
       let clickedBG = 0;
       let moveSub = 0;
       let subAngle = 360;
@@ -32,11 +32,13 @@
       let movingDown = 0;
       let milliTime = 0;
       var deg = Math.PI/180;
-      var sandY = canvas.height - 6;
+      let sandY = canvas.height - 6;
 
       function mDown () {
-        sChullY -= 3;
-        drawSubR(355);
+        if (sChullY < sandY && sChullY >= 40) {
+          sChullY -= 3;
+          drawSubR(355);
+        }
       }
       function mUp () {
       }
