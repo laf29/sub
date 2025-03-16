@@ -40,14 +40,14 @@
         if (sChullY < sandY && sChullY >= 40) {
           subUpping = 1;
           sChullY -= 3;
-          drawSubR(355);
+          drawSubR(0);       //drawSubR(355);
           subUpping = 0;
         }
       }
       function mUp () {
         if (subUpping == 0 && sChullY < sandY) {
           sChullY += downSpeed;
-          drawSubR(2);
+          drawSubR(0);       //drawSubR(2);
         }
       }
       function drawWater() {
