@@ -35,11 +35,12 @@
       let sandY = canvas.height - 6;
       let subUpping = 0;
       let downSpeed = 0.1;
+      let upSpeed = 6
 
       function mDown () {
         if (sChullY < sandY && sChullY >= 40) {
           subUpping = 1;
-          sChullY -= 3;
+          sChullY -= upSpeed;
           drawSubR(0);       //drawSubR(355);
           subUpping = 0;
         }
