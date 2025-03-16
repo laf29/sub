@@ -34,6 +34,7 @@
       var deg = Math.PI/180;
       let sandY = canvas.height - 6;
       let subUpping = 0;
+      let downSpeed = 0.1;
 
       function mDown () {
         if (sChullY < sandY && sChullY >= 40) {
@@ -45,7 +46,7 @@
       }
       function mUp () {
         if (subUpping == 0 && sChullY < sandY) {
-          sChullY -= 0.01;
+          sChullY -= downSpeed;
           drawSubR(2);
         }
       }
