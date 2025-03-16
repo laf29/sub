@@ -19,7 +19,7 @@
     </style>
   </head>
   <body style="background-color: #8c7615;">
-    <canvas id="myCanvas" onmousedown="mDown()" onmouseup="mUp()">Your browser cannot support this game.</canvas>
+    <canvas id="myCanvas" onmousedown="mDown()">Your browser cannot support this game.</canvas>
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
@@ -40,10 +40,7 @@
         ctxt.stroke();
       }
       function mUp () {
-        const cntxt = canvas.getContext("2d");
-        cntxt.beginPath();
-        cntxt.rect(10, 10, 20, 30);
-        cntxt.stroke();
+        
       }
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -62,6 +59,8 @@
         ctx.globalAlpha = 1;
       }
       function drawSubR(subMoveAngle) { 
+        clear();
+        drawWater();
         //ctx.save();
         ctx.rotate(subMoveAngle * deg);
         ctx.translate(50, sChullY);
@@ -97,6 +96,7 @@
         ctx.fill();
         ctx.closePath();
      //   ctx.restore();
+        drawWaterO();
       }
 
       function animateSubUp() {
