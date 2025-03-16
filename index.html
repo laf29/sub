@@ -106,13 +106,17 @@
       function clear() {
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+      } 
+      function lvlUp() {
+        downSpeed += 0.05
       }
       function timer() {
         milliTime ++;
       }
-      setInterval(timer,1)
-      setInterval(mUp,1)
+      setInterval(timer,1);
+      setInterval(mUp,1);
       drawSubR(360);
+      setInterval(lvlUp,10000);
 
       /*
 ----------------- O L D   V E R S I O N S ---------------------
