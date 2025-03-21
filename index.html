@@ -34,7 +34,7 @@
       var deg = Math.PI/180;
       let sandY = canvas.height - 6;
       let subUpping = 0;
-      let downSpeed = 0.1;
+      let downSpeed = 0.05;
       let upSpeed = 6;
 
       function mDown () {
@@ -119,7 +119,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       } 
       function lvlUp() {
-        downSpeed += 0.05
+        downSpeed += 0.01
       }
       function timer() {
         milliTime ++;
