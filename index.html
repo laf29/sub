@@ -36,6 +36,7 @@
       let subUpping = 0;
       let downSpeed = 0.05;
       let upSpeed = 6;
+      let sailboatFx = 50;
 
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
@@ -68,7 +69,7 @@
         ctx.globalAlpha = 1;
       }
       function drawSailboat() {
-        ctx.translate(80,42);
+        ctx.translate(sailboatFx+36,42);
         ctx.beginPath();
         ctx.moveTo(-19,-33);
         ctx.lineTo(4,-8);
@@ -91,7 +92,7 @@
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
-        ctx.arc(-35,-5,5,0,Math.PI * -0.5)
+        ctx.arc(-31,-5,5,0,Math.PI);
         ctx.moveTo(10,-5);
         ctx.lineTo(5,0.5);
         ctx.lineTo(-32,0);
