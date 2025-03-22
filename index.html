@@ -69,8 +69,8 @@
         ctx.fillRect(0, 40, canvas.width, canvas.height);
         ctx.globalAlpha = 1;
       }
-      function drawSailboat(frontX) {
-        ctx.translate(frontX+36,42);
+      function drawSailboat() {
+        ctx.translate(canvas.width+36-sailboatSpeed,42);
         ctx.beginPath();
         ctx.moveTo(-19,-33);
         ctx.lineTo(4,-8);
@@ -111,8 +111,8 @@
       function drawSubR(subMoveAngle) { 
         clear();
         drawWater();
-        moveSailboat();
-      //  drawSailboat();
+     //   moveSailboat();
+        drawSailboat();
         ctx.rotate(subMoveAngle * deg);
         ctx.translate(50, sChullY);
         ctx.beginPath();
