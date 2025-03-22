@@ -36,7 +36,8 @@
       let subUpping = 0;
       let downSpeed = 0.05;
       let upSpeed = 6;
-      let sailboatFx = 50;
+      let sailboatSpeed = 0.01;
+      let sailboatFx = canvas.width;
 
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
@@ -68,8 +69,8 @@
         ctx.fillRect(0, 40, canvas.width, canvas.height);
         ctx.globalAlpha = 1;
       }
-      function drawSailboat() {
-        ctx.translate(sailboatFx+36,42);
+      function drawSailboat(frontX) {
+        ctx.translate(frontX+36,42);
         ctx.beginPath();
         ctx.moveTo(-19,-33);
         ctx.lineTo(4,-8);
@@ -103,10 +104,15 @@
         ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
       }
+      function moveSailboat() {
+        drawSailboat(canvas.width-sailboatSpeed);
+        sailboatSpeed -= 0.02;
+      }
       function drawSubR(subMoveAngle) { 
         clear();
         drawWater();
-        drawSailboat();
+        moveSailboat();
+      //  drawSailboat();
         ctx.rotate(subMoveAngle * deg);
         ctx.translate(50, sChullY);
         ctx.beginPath();
