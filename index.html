@@ -112,9 +112,15 @@
         drawSailboat(canvas.width-sailboatSpeed);
         sailboatSpeed -= 0.02;
       }
+      function drawCounter(); {
+        ctx.translate(canvas.width,canvas.height/2);
+        
+        ctx.setTransform(1,0,0,1,0,0);
+      }
       function drawSubR(subMoveAngle) { 
         clear();
         drawWater();
+        drawCounter();
      //   moveSailboat();
         drawSailboat();
         sailboatFx -=0.1;
