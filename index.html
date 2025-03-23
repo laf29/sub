@@ -123,9 +123,13 @@
         ctx.fillStyle = "#000000";
         ctx.fill();
         ctx.closePath();
-  //      ctx.beginPath();
-//        ctx.moveTo(-9,-29);
-//        ctx.closePath();
+        ctx.beginPath();
+        ctx.moveTo(-11,canvas.height/-3+11);
+        ctx.lineTo(-11,canvas.height/3-1);
+        ctx.lineTo(-14,canvas.height/3-1);
+        ctx.lineTo(-14,canvas.height/-3+1);
+        ctx.lineTo(-11,canvas.height/-3+1);
+        ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
       }
       function drawSubR(subMoveAngle) { 
