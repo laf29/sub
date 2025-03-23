@@ -38,7 +38,7 @@
       let upSpeed = 6;
       let sailboatSpeed = 0.1;
       let sailboatFx = canvas.width;
-      let score = 5;
+      let score = 0;
 
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
@@ -186,11 +186,15 @@
       function lvlUp() {
         downSpeed += 0.01
       }
+      function scoreKeeping() {
+        score ++;
+      }
       function timer() {
         milliTime ++;
       }
       alert("*This game is currently under development*\n\nAvoid hitting the boats without being submerged for too long!\n\nClick to control the submrine. Refresh the page to restart.\nThis game is best played in landscape mode.")
       setInterval(timer,1);
+      setInterval(scoreKeeping, 1000);
       setInterval(mUp,1);
       drawSubR(360);
       setInterval(lvlUp,10000);
