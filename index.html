@@ -74,13 +74,16 @@
         ctx.beginPath();
         ctx.moveTo(-19,-33);
         ctx.lineTo(4,-8);
-        ctx.lineTo(-19,-8);
+        ctx.lineTo(-27,-8);
         ctx.lineTo(-19,-33);
-        ctx.fillStyle = "#f2f2ff";
+        ctx.fillStyle = "#c7e9ff";
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
         ctx.moveTo(-20,-4);
+        ctx.lineTo(-20,-7);
+        ctx.lineTo(-27,-9);
+        ctx.lineTo(-20,-9);
         ctx.lineTo(-20,-33);
         ctx.lineTo(-18,-33);
         ctx.lineTo(-18,-9);
@@ -113,7 +116,7 @@
         drawWater();
      //   moveSailboat();
         drawSailboat();
-        sailboatFx -=0.01;
+        sailboatFx -=0.1;
         ctx.rotate(subMoveAngle * deg);
         ctx.translate(50, sChullY);
         ctx.beginPath();
