@@ -115,11 +115,11 @@
       function drawCounter() {
         ctx.translate(canvas.width,canvas.height/2);
         ctx.beginPath();
-        ctx.moveTo(-10,-30);
-        ctx.lineTo(-10,30);
-        ctx.lineTo(-15,30);
-        ctx.lineTo(-15,-30);
-        ctx.lineTo(-10,-30);
+        ctx.moveTo(-10,-40);
+        ctx.lineTo(-10,40);
+        ctx.lineTo(-15,40);
+        ctx.lineTo(-15,-40);
+        ctx.lineTo(-10,-40);
         ctx.fillStyle = "#000000";
         ctx.fill();
         ctx.closePath();
@@ -131,7 +131,6 @@
       function drawSubR(subMoveAngle) { 
         clear();
         drawWater();
-        drawCounter();
      //   moveSailboat();
         drawSailboat();
         sailboatFx -=0.1;
@@ -168,6 +167,7 @@
         ctx.closePath();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         drawWaterO();
+        drawCounter();
       }
       function clear() {
         ctx.setTransform(1, 0, 0, 1, 0, 0);
