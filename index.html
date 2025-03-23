@@ -38,6 +38,7 @@
       let upSpeed = 6;
       let sailboatSpeed = 0.1;
       let sailboatFx = canvas.width;
+      let score = 5;
 
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
@@ -133,6 +134,9 @@
         ctx.fill();
         ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
+      }
+      function gameOver() {
+        alert("You died with a score of"+score+".\nRefresh the page to try again.");
       }
       function drawSubR(subMoveAngle) { 
         clear();
