@@ -73,10 +73,10 @@
             gameOver();
           }
         }
-        if (sChullY < 60) {
+        if (sChullY > 60) {
           counterHeight = canvas.height/3*-2;
         } else {
-          counterHeight -= 0.01;
+          counterHeight += 0.01;
         }
         if (counterHeight == 0) {
           gameOver();
