@@ -39,7 +39,7 @@
       let sailboatSpeed = 0.1;
       let sailboatFx = canvas.width;
       let score = 0;
-      let counterHeight = canvas.height/3;
+      let counterHeight = canvas.height/3*-1;
 
       function restartGame() {
         subUpping = 0;
@@ -74,7 +74,7 @@
           }
         }
         if (sChullY < 50) {
-          counterHeight = canvas.height/3;
+          counterHeight = canvas.height/3*-1;
         } else if (counterHeight == 0) {
           gameOver();
         } else {
