@@ -46,7 +46,8 @@
           sChullY -= upSpeed;
           drawSubR(0);       //drawSubR(355);
           subUpping = 0;
-        } else {
+        }
+        if (sChullY < sandY) {
           gameOver();
         }
       }
@@ -138,7 +139,8 @@
         ctx.setTransform(1,0,0,1,0,0);
       }
       function gameOver() {
-        alert("You died with a score of"+score+".\nRefresh the page to try again.");
+        alert("You died with a score of "+score+". Better luck next time.");
+        score = 0;
       }
       function drawSubR(subMoveAngle) { 
         clear();
