@@ -40,6 +40,7 @@
       let sailboatFx = canvas.width;
       let score = 0;
       let counterHeight = canvas.height/3*-2+2;
+      let highScore = 0;
 
       function restartGame() {
         subUpping = 0;
@@ -168,7 +169,10 @@
         ctx.setTransform(1,0,0,1,0,0);
       }
       function gameOver() {
-        alert("You died with a score of "+score+". Better luck next time.");
+        if (score > highScore) {
+          highScore = score;
+        }
+        alert("You died with a score of "+score+". Better luck next time.\n\nHigh score: "+highScore);
         restartGame();
       }
       function drawSubR(subMoveAngle) { 
