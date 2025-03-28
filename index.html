@@ -47,6 +47,12 @@
           drawSubR(0);       //drawSubR(355);
           subUpping = 0;
         }
+      }
+      function mUp () {
+        if (subUpping == 0 && sChullY < sandY) {
+          sChullY += downSpeed;
+          drawSubR(0);       //drawSubR(2);
+        }
         if (sChullY > sandY) {
           gameOver();
         }
@@ -54,12 +60,6 @@
           if (sailboatFx > 20 && sailboatFx < 80) {
             gameOver();
           }
-        }
-      }
-      function mUp () {
-        if (subUpping == 0 && sChullY < sandY) {
-          sChullY += downSpeed;
-          drawSubR(0);       //drawSubR(2);
         }
       }
       function drawWater() {
