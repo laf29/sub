@@ -75,8 +75,11 @@
         }
         if (sChullY < 50) {
           counterHeight = canvas.height/3;
+        } else if (counterHeight == 0) {
+          gameOver();
         } else {
           counterHeight -= 0.01;
+        }
       }
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
