@@ -39,6 +39,7 @@
       let sailboatSpeed = 0.1;
       let sailboatFx = canvas.width;
       let score = 0;
+      let counterHeight = canvas.height/3;
 
       function restartGame() {
         subUpping = 0;
@@ -72,6 +73,10 @@
             gameOver();
           }
         }
+        if (sChullY < 50) {
+          counterHeight = canvas.height/3;
+        } else {
+          counterHeight -= 0.01;
       }
       function drawWater() {
         const grd = ctx.createLinearGradient(100, 0, 100, 100);
@@ -144,7 +149,7 @@
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
-        ctx.moveTo(-11,canvas.height/-3+11);
+        ctx.moveTo(-11,canvas.height/-3+1);
         ctx.lineTo(-11,canvas.height/3-1);
         ctx.lineTo(-14,canvas.height/3-1);
         ctx.lineTo(-14,canvas.height/-3+1);
@@ -152,6 +157,10 @@
         ctx.fillStyle = "#928287";
         ctx.fill();
         ctx.closePath();
+        ctx.beginPath();
+        ctx.rect(-14, canvas.height/3-1, 3, counterHeight);
+        ctx.fillStyle = "#3489eb";
+        ctx.fill();
         ctx.setTransform(1,0,0,1,0,0);
       }
       function gameOver() {
