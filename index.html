@@ -40,6 +40,15 @@
       let sailboatFx = canvas.width;
       let score = 0;
 
+      function restartGame() {
+        subUpping = 0;
+        downSpeed = 0.05;
+        upSpeed = 6;
+        sailboatSpeed = 0.1;
+        sailboatFx = canvas.width;
+        score = 0;
+        sChullY = 60;
+      }
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
           subUpping = 1;
@@ -145,7 +154,7 @@
       }
       function gameOver() {
         alert("You died with a score of "+score+". Better luck next time.");
-        score = 0;
+        restartGame();
       }
       function drawSubR(subMoveAngle) { 
         clear();
