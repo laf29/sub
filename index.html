@@ -65,8 +65,10 @@
         if (sChullY > sandY) {
           gameOver();
         }
-        if (sChullY < 44) {
+        if (sChullY < 50) {
           if (sailboatFx+36 > 24 && sailboatFx-10 < 55) {
+            gameOver();
+          } else if (sailboatFx+36 > 24 && sailboatFx-10 < 55) {
             gameOver();
           }
         }
