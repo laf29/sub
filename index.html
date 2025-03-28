@@ -47,8 +47,13 @@
           drawSubR(0);       //drawSubR(355);
           subUpping = 0;
         }
-        if (sChullY < sandY) {
+        if (sChullY > sandY) {
           gameOver();
+        }
+        if (sChullY < 40) {
+          if (sailboatFx > 20 && sailboatFx < 80) {
+            gameOver();
+          }
         }
       }
       function mUp () {
