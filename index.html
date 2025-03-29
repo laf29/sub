@@ -41,6 +41,8 @@
       let score = 0;
       let counterHeight = canvas.height/3*-2+2;
       let highScore = 0;
+      let type055Fx = canvas.width+100;
+      let type055Speed = 0.2;
 
       function restartGame() {
         subUpping = 0;
@@ -138,6 +140,22 @@
         ctx.fill();
         ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
+      }
+      function draw055() {
+        ctx.translate(type055Fx,42);
+        ctx.beginPath();
+        ctx.moveTo(0,-8);
+        ctx.lineTo(30,-8);
+        ctx.lineTo(30,-11);
+        ctx.lineTo(37,-11);
+        ctx.lineTo(39,-18);
+        ctx.lineTo(49,-18);
+        ctx.lineTo(52,-24);
+        ctx.lineTo(57,-24);
+        ctx.lineTo(58,-30);
+        ctx.lineTo(59,-24);
+        ctx.lineTo(61
+        
       }
       function moveSailboat() {
         drawSailboat(canvas.width-sailboatSpeed);
