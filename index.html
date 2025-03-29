@@ -154,8 +154,23 @@
         ctx.lineTo(57,-24);
         ctx.lineTo(58,-30);
         ctx.lineTo(59,-24);
-        ctx.lineTo(61
-        
+        ctx.lineTo(61,-16);
+        ctx.lineTo(77,-16);
+        ctx.lineTo(79,-10);
+        ctx.lineTo(84,-10);
+        ctx.lineTo(85,-8);
+        ctx.lineTo(93,-8);
+        ctx.lineTo(95,-12);
+        ctx.lineTo(102,-12);
+        ctx.lineTo(102,-4);
+        ctx.lineTo(118,-4);
+        ctx.lineTo(116,0);
+        ctx.lineTo(5,0);
+        ctx.lineTo(0,-8);
+        ctx.fillStyle = "#EEEEEE";
+        ctx.fill();
+        ctx.closePath();
+        ctx.setTransform(1,0,0,1,0,0);
       }
       function moveSailboat() {
         drawSailboat(canvas.width-sailboatSpeed);
@@ -185,6 +200,7 @@
         ctx.rect(-14, canvas.height/3-1, 3, counterHeight);
         ctx.fillStyle = "#3489eb";
         ctx.fill();
+        ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
       }
       function gameOver() {
