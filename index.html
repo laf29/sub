@@ -302,9 +302,9 @@
         ranSpacing = getRndInteger(0,50);
         if (ranBoat == 1 && sailboatOnScreen == 0) {
           sailboatFx = canvas.width + ranSpacing;
-        } else if (ranBoat == 1 && sailboat2OnScreen == 0) {
+        } else if (ranBoat == 2 && sailboat2OnScreen == 0) {
           sailboat2Fx = canvas.width + ranSpacing;
-        } else if (ranBoat == 1 && type055OnScreen == 0) {
+        } else if (ranBoat == 3 && type055OnScreen == 0) {
           sailboatFx = canvas.width + ranSpacing;
         }
       }
@@ -365,7 +365,7 @@
       setInterval(mUp,1);
       drawSubR(360);
       setInterval(lvlUp,10000);
-      setInterval(randomBoat,3000);
+      setInterval(randomBoat,8000);
 
       /*
 ----------------- O L D   V E R S I O N S ---------------------
@@ -425,7 +425,7 @@
         }
       }
 
-      
+
       function play() {
         moveSubFunc();
       }
