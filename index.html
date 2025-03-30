@@ -42,7 +42,7 @@
       let counterHeight = canvas.height/3*-2+2;
       let highScore = 0;
       let type055Fx = canvas.width-150;
-      let type055Speed = 0.2;
+      let type055Speed = 0.12;
 
       function restartGame() {
         subUpping = 0;
@@ -210,12 +210,24 @@
         alert("You died with a score of "+score+". Better luck next time.\n\nHigh score: "+highScore);
         restartGame();
       }
+      function moveBoats() {
+        drawSailboat();
+        draw055();
+        sailboatFx -= sailboatSpeed;
+        type055Fx -= type055Speed;
+        if (sailboatFx <= -100) {
+          sailboatFx = canvas.width;
+        }
+        if (type055Fx <= -100) {
+          type055Fx = canvas.width;
+        }
+      }
       function drawSubR(subMoveAngle) { 
         clear();
         drawWater();
-     //   moveSailboat();
-        drawSailboat();
-        draw055();
+        moveBoats();
+        //drawSailboat();
+       // draw055();
         sailboatFx -=0.1;
         ctx.rotate(subMoveAngle * deg);
         ctx.translate(50, sChullY);
