@@ -38,6 +38,8 @@
       let upSpeed = 6;
       let sailboatSpeed = 0.1;
       let sailboatFx = canvas.width+170;
+      let sailboat2Speed = 0.1;
+      let sailboat2Fx = canvas.width+170;
       let score = 0;
       let counterHeight = canvas.height/3*-2+2;
       let highScore = 0;
@@ -146,7 +148,7 @@
         ctx.setTransform(1,0,0,1,0,0);
       }
       function drawSailboat2() {
-        ctx.translate(sailboatFx+36,42);//canvas.width+36-sailboatSpeed,42);
+        ctx.translate(sailboat2Fx+36,42);//canvas.width+36-sailboatSpeed,42);
         ctx.beginPath();
         ctx.moveTo(-19,-40);
         ctx.lineTo(4,-8);
@@ -255,6 +257,7 @@
         draw055();
         sailboatFx -= sailboatSpeed;
         type055Fx -= type055Speed;
+        sailboat2Fx -= sailboat2Speed;
       }
       function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -262,7 +265,13 @@
       function randomBoat() {
         ranBoat = getRndInteger(1,3);
         ranSpacing = getRndInteger(0,300);
-        if (ranBoat == 1)
+        if (ranBoat == 1) {
+          sailboatFx = canvas.width + ranSpacing;
+        } else if (ranBoat == 1) {
+          sailboat2Fx = canvas.width + ranSpacing;
+        } else if (ranBoat == 1) {
+          sailboatFx = canvas.width + ranSpacing;
+        }
       }
       function drawSubR(subMoveAngle) { 
         clear();
@@ -321,6 +330,7 @@
       setInterval(mUp,1);
       drawSubR(360);
       setInterval(lvlUp,10000);
+      setInterval(randomBoat,3000);
 
       /*
 ----------------- O L D   V E R S I O N S ---------------------
