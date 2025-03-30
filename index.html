@@ -37,11 +37,11 @@
       let downSpeed = 0.05;
       let upSpeed = 6;
       let sailboatSpeed = 0.1;
-      let sailboatFx = canvas.width;
+      let sailboatFx = canvas.width+170;
       let score = 0;
       let counterHeight = canvas.height/3*-2+2;
       let highScore = 0;
-      let type055Fx = canvas.width-150;
+      let type055Fx = canvas.width;
       let type055Speed = 0.12;
 
       function restartGame() {
@@ -172,10 +172,6 @@
         ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
       }
-      function moveSailboat() {
-        drawSailboat(canvas.width-sailboatSpeed);
-        sailboatSpeed -= 0.02;
-      }
       function drawCounter() {
         ctx.translate(canvas.width,canvas.height/2);
         ctx.beginPath();
@@ -215,10 +211,10 @@
         draw055();
         sailboatFx -= sailboatSpeed;
         type055Fx -= type055Speed;
-        if (sailboatFx <= -100) {
+        if (sailboatFx <= -150) {
           sailboatFx = canvas.width;
         }
-        if (type055Fx <= -100) {
+        if (type055Fx <= -200) {
           type055Fx = canvas.width;
         }
       }
