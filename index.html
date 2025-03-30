@@ -49,10 +49,12 @@
         downSpeed = 0.05;
         upSpeed = 6;
         sailboatSpeed = 0.1;
-        sailboatFx = canvas.width;
+        sailboatFx = canvas.width+170;
         score = 0;
         sChullY = 60;
         counterHeight = canvas.height/3*-2+2;
+        type055Fx = canvas.width;
+        type055Speed = 0.12;
       }
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
