@@ -75,6 +75,7 @@
         sailboatOnScreen = 0;
         sailboat2OnScreen = 0;
         type055OnScreen = 0;
+        randomBoat();
       }
       function mDown () {
         if (sChullY < sandY && sChullY >= 38+upSpeed) {
@@ -295,7 +296,7 @@
       }
       function randomBoat() {
         ranBoat = getRndInteger(1,3);
-        ranSpacing = getRndInteger(50,200);
+        ranSpacing = getRndInteger(100,400);
         if (ranBoat == 1 && sailboatOnScreen == 0) {
           sailboatFx = canvas.width + ranSpacing;
         } else if (ranBoat == 2 && sailboat2OnScreen == 0) {
@@ -360,7 +361,7 @@
       setInterval(mUp,1);
       drawSubR(360);
       setInterval(lvlUp,10000);
-      setInterval(randomBoat,6000);
+      setInterval(randomBoat,10000);
       randomBoat();
 
 /*
