@@ -73,7 +73,7 @@
         counterHeight = canvas.height/3*-2+2;
         highScore = 0;
         type055Fx = canvas.width;
-        type055Speed = 0.8;
+        type055Speed = 0.1;
         ranBoat = 1;
         ranSpacing = 100; 
         sailboatOnScreen = 0;
@@ -367,69 +367,8 @@
       setInterval(lvlUp,10000);
       setInterval(randomBoat,8000);
 
-      /*
+/*
 ----------------- O L D   V E R S I O N S ---------------------
-
-      function animateSubUp() {
-        clear();
-        drawWater();
-        movingUp = 1;
-        if (subAngle > 345) {
-          subAngle -= 3;
-        }
-        sChullY -= 1;
-        movedSub += 1;
-        drawSubR();
-        drawWaterO();
-        if (movedSub == 6) {
-          movingUp = 0;
-          clearInterval(animateUp);
-        }
-      }
-
-      function animateSubDown() {
-        clear();
-        drawWater();
-        movingDown = 0;
-        if (subAngle < 360) {
-          subAngle += 1;
-        }
-        sChullY += 0.1;
-        movedSub += 1;
-        drawSubR();
-        drawWaterO();
-        if (movedSub == 6) {
-          movingDown = 0;
-          clearInterval(animateDown);
-        }
-      }
-
-      
-      function moveSubFunc() {
-        if (sChullY < sandY) {
-          if (sChullY >= 40) {
-            if (clickedBG == 1) {
-              if (movingDown == 0) {
-                movedSub = 0;
-                const animateUp = setInterval(animateSubUp, 10);
-              }
-              clickedBG = 0;
-            } else if (clickedBG==0) {
-              if (movingUp == 0) {
-                movedSub = 0;
-                const animateDown = setInterval(animateSubDown, 10);
-              }
-            }
-          }
-         // drawSubR();
-        }
-      }
-
-
-      function play() {
-        moveSubFunc();
-      }
-
 */
       
     </script>
