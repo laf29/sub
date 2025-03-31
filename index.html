@@ -62,13 +62,13 @@
         downSpeed = 0.05;
         upSpeed = 6;
         sailboatSpeed = 0.1;
-        sailboatFx = canvas.width+170;
+        sailboatFx = -70;
         sailboat2Speed = 0.1;
-        sailboat2Fx = canvas.width+170;
+        sailboat2Fx = -70;
         score = 0;
         counterHeight = canvas.height/3*-2+2;
         highScore = 0;
-        type055Fx = canvas.width;
+        type055Fx = -200;
         type055Speed = 0.1;
         ranBoat = 1;
         ranSpacing = 100; 
@@ -360,7 +360,8 @@
       setInterval(mUp,1);
       drawSubR(360);
       setInterval(lvlUp,10000);
-      setInterval(randomBoat,8000);
+      setInterval(randomBoat,6000);
+      randomBoat();
 
 /*
 ----------------- O L D   V E R S I O N S ---------------------
