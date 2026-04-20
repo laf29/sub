@@ -30,7 +30,7 @@
   <body style="background-color: #A88E67;">
     
 
-    <canvas id="gameCanvas" style="height: 87vh; width: 100vw;" onmousedown="mDown()">Your browser cannot support this game.</canvas>
+    <canvas id="gameCanvas" style="height: 87vh; width: 100vw;" onmousedown="canvasClicked()">Your browser cannot support this game.</canvas>
     <script>
       const canvas = document.getElementById("gameCanvas");
       const ctx = canvas.getContext("2d");
@@ -38,15 +38,18 @@
       canvas.width = canvas.clientWidth;
       let submarineAngle = 0;
       let pixelSize = canvas.height/200;
+      var submarineXPosition = 80 * pixelSize
+      var submarineYPosition = canvas.height/2
 
       function test() {
         var deg2rad = degrees * (Math.PI / 180)
         var angle = lerp(angle, targetAngle, 0.1)
       }
-      
-
+      function canvasClicked() {
+        
+      }
       function drawSubmarine(targetAngle) {
-        ctx.translate(80 * pixelSize,canvas.height/2);
+        ctx.translate(submarineXPosition, submarineYPosition);
         ctx.beginPath();
         ctx.arc(0 * pixelSize, 0 * pixelSize, 6 * pixelSize, 0, Math.PI * 2);
         ctx.moveTo(-16 * pixelSize, -5 * pixelSize);
