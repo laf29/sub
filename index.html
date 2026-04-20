@@ -76,6 +76,13 @@
         ctx.fillStyle = "#668093";
         ctx.fill();
         ctx.closePath();
+        ctx.setTransform(1,0,0,1,0,0);
+      }
+      function drawWater() {
+        ctx.globalAlpha = 0.6;
+        ctx.fillStyle = "#668093";
+        ctx.fillRect(0, 40, canvas.width, canvas.height);
+        ctx.globalAlpha = 1;
       }
 
       drawSubmarine(0);
