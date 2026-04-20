@@ -35,6 +35,8 @@
       const ctx = canvas.getContext("2d");
       let submarineAngle = 0;
       let pixelSize = 1;
+      canvas.height = canvas.clientHeight;
+      canvas.width = canvas.clientWidth;
 
       function drawSubmarine(target_angle) {
         ctx.translate(canvas.width/2-0.5,canvas.height/2-0.5);
