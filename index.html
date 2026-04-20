@@ -43,7 +43,7 @@
       function drawSubmarine(target_angle) {
         ctx.translate(canvas.width/2,canvas.height/2);
         ctx.beginPath();
-        ctx.arc(0, 0, 6 * pixelSize, 0, Math.PI * 2);
+        ctx.arc(0 * pixelSize, 0 * pixelSize, 6 * pixelSize, 0, Math.PI * 2);
         ctx.moveTo(-16 * pixelSize, -5 * pixelSize);
         ctx.lineTo(-8 * pixelSize, -6 * pixelSize);
         ctx.lineTo(-12 * pixelSize, -6 * pixelSize);
@@ -65,9 +65,9 @@
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
-        ctx.arc(0, -0.5, 2, 0, Math.PI * 2);
-        ctx.arc(-7, -0.5, 2, 0, Math.PI * 2);
-        ctx.arc(-14, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(0 * pixelSize, -0.5 * pixelSize, 2 * pixelSize, 0 * pixelSize, Math.PI * 2);
+        ctx.arc(-7 * pixelSize, -0.5 * pixelSize, 2 * pixelSize, 0 * pixelSize, Math.PI * 2);
+        ctx.arc(-14 * pixelSize, -0.5 * pixelSize, 2 * pixelSize, 0 * pixelSize, Math.PI * 2);
         ctx.fillStyle = "#668093";
         ctx.fill();
         ctx.closePath();
