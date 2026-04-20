@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sub Thingy</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+       /* transform-origin: center; */
+      }
+      canvas {
+        background: #76d7e8;
+        display: block;
+        margin: 0 auto;
+        height: 87vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body style="background-color: #8c7615;">
+    <canvas id="myCanvas" onmousedown="mDown()">Your browser cannot support this game.</canvas>
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+      let sChullY = 60;
+      let subAngle = 360;
+      let movedSub = 0;
+      let movingUp = 0;
+      let movingDown = 0;
+      let milliTime = 0;
+      var deg = Math.PI/180;
+      let sandY = canvas.height - 6;
+      let subUpping = 0;
+      let downSpeed = 0.05;
+      let upSpeed = 6;
+      let sailboatSpeed = 0.1;
+      let sailboatFx = canvas.width+170;
+      let sailboat2Speed = 0.1;
+      let sailboat2Fx = canvas.width+170;
+      let score = 0;
+      let counterHeight = canvas.height/3*-2+2;
+      let highScore = 0;
+      let type055Fx = canvas.width;
+      let type055Speed = 0.1;
+      let ranBoat = 1;
+      let ranSpacing = 100; 
+      let sailboatOnScreen = 0;
+      let sailboat2OnScreen = 0;
+      let type055OnScreen = 0;
+
+      function restartGame() {
+        sChullY = 60;
+        subAngle = 360;
+        movedSub = 0;
+        movingUp = 0;
+        movingDown = 0;
+        milliTime = 0;
+        deg = Math.PI/180;
+        sandY = canvas.height - 6;
+        subUpping = 0;
+        downSpeed = 0.05;
+        upSpeed = 6;
+        sailboatSpeed = 0.1;
+        sailboatFx = -70;
+        sailboat2Speed = 0.1;
+        sailboat2Fx = -70;
+        score = 0;
+        counterHeight = canvas.height/3*-2+2;
+        highScore = 0;
+        type055Fx = -200;
+        type055Speed = 0.1;
+        ranBoat = 1;
+        ranSpacing = 100; 
+        sailboatOnScreen = 0;
+        sailboat2OnScreen = 0;
+        type055OnScreen = 0;
+        randomBoat();
+      }
+      function mDown () {
+        if (sChullY < sandY && sChullY >= 38+upSpeed) {
+          subUpping = 1;
+          sChullY -= upSpeed;
+          drawSubR(0);       //drawSubR(355);
+          subUpping = 0;
+        }
+      }
+      function mUp () {
+        if (subUpping == 0 && sChullY < sandY) {
+          sChullY += downSpeed;
+          drawSubR(0);       //drawSubR(2);
+        }
+        if (sChullY > sandY) {
+          gameOver();
+        }
+        if (sChullY < 49) {
+          if (sailboatFx+36 > 24 && sailboatFx-10 < 55) {
+            gameOver();
+          } else if (sailboatFx+36 > 24 && sailboatFx-10 < 55) {
+            gameOver();
+          }
+        }
+        if (sChullY < 50) {
+          counterHeight = canvas.height/3*-2+2;
+        } else {
+          counterHeight += 0.03;
+        }
+        if (counterHeight > 0) {
+          gameOver();
+        }
+      }
+      function drawWater() {
+        const grd = ctx.createLinearGradient(100, 0, 100, 100);
+        grd.addColorStop(0, "#0c34c7");
+        grd.addColorStop(1, "#031554");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 40, canvas.width, canvas.height);
+      }
+      function drawWaterO() {
+        const grd = ctx.createLinearGradient(100, 0, 100, 100);
+        ctx.globalAlpha = 0.5;
+        grd.addColorStop(0, "#0c34c7");
+        grd.addColorStop(1, "#031554");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 40, canvas.width, canvas.height);
+        ctx.globalAlpha = 1;
+      }
+      function drawSailboat() {
+        ctx.translate(sailboatFx+36,42);//canvas.width+36-sailboatSpeed,42);
+        ctx.beginPath();
+        ctx.moveTo(-19,-40);
+        ctx.lineTo(4,-8);
+        ctx.lineTo(-27,-8);
+        ctx.lineTo(-19,-40);
+        ctx.fillStyle = "#c7e9ff";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.moveTo(-20,-4);
+        ctx.lineTo(-20,-7);
+        ctx.lineTo(-27,-7);
+        ctx.lineTo(-27,-9);
+        ctx.lineTo(-19.5,-9);
+        ctx.lineTo(-19.5,-40);
+        ctx.lineTo(-18.5,-40);
+        ctx.lineTo(-18.5,-9);
+        ctx.lineTo(4,-9);
+        ctx.lineTo(4,-7);
+        ctx.lineTo(-18,-7);
+        ctx.lineTo(-18,-4);
+        ctx.lineTo(-20,-4);
+        ctx.fillStyle = "#c4b9b9";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(-33,-5,5,0,Math.PI);
+        ctx.moveTo(10,-5);
+        ctx.lineTo(5,0.5);
+        ctx.lineTo(-32,0);
+        ctx.lineTo(-36,-5);
+        ctx.lineTo(10,-5);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+        ctx.closePath();
+        ctx.setTransform(1,0,0,1,0,0);
+      }
+      function drawSailboat2() {
+        ctx.translate(sailboat2Fx+36,42);//canvas.width+36-sailboatSpeed,42);
+        ctx.beginPath();
+        ctx.moveTo(-19,-40);
+        ctx.lineTo(4,-8);
+        ctx.lineTo(-27,-8);
+        ctx.lineTo(-19,-40);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.moveTo(-20,-4);
+        ctx.lineTo(-20,-7);
+        ctx.lineTo(-27,-7);
+        ctx.lineTo(-27,-9);
+        ctx.lineTo(-19.5,-9);
+        ctx.lineTo(-19.5,-40);
+        ctx.lineTo(-18.5,-40);
+        ctx.lineTo(-18.5,-9);
+        ctx.lineTo(4,-9);
+        ctx.lineTo(4,-7);
+        ctx.lineTo(-18,-7);
+        ctx.lineTo(-18,-4);
+        ctx.lineTo(-20,-4);
+        ctx.fillStyle = "#eb9c57";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(-33,-5,5,0,Math.PI);
+        ctx.moveTo(10,-5);
+        ctx.lineTo(5,0.5);
+        ctx.lineTo(-32,0);
+        ctx.lineTo(-36,-5);
+        ctx.lineTo(10,-5);
+        ctx.fillStyle = "#7d90b0";
+        ctx.fill();
+        ctx.closePath();
+        ctx.setTransform(1,0,0,1,0,0);
+      }
+      function draw055() {
+        ctx.translate(type055Fx,42);
+        ctx.beginPath();
+        ctx.moveTo(0,-8);
+        ctx.lineTo(30,-8);
+        ctx.lineTo(30,-11);
+        ctx.lineTo(37,-11);
+        ctx.lineTo(39,-18);
+        ctx.lineTo(49,-18);
+        ctx.lineTo(52,-24);
+        ctx.lineTo(57,-24);
+        ctx.lineTo(58,-30);
+        ctx.lineTo(59,-24);
+        ctx.lineTo(61,-16);
+        ctx.lineTo(77,-16);
+        ctx.lineTo(79,-10);
+        ctx.lineTo(84,-10);
+        ctx.lineTo(85,-8);
+        ctx.lineTo(93,-8);
+        ctx.lineTo(95,-12);
+        ctx.lineTo(102,-12);
+        ctx.lineTo(102,-4);
+        ctx.lineTo(118,-4);
+        ctx.lineTo(116,0);
+        ctx.lineTo(5,0);
+        ctx.lineTo(0,-8);
+        ctx.fillStyle = "#728792"; // #97a1af top
+        ctx.fill();
+        ctx.closePath();
+        ctx.setTransform(1,0,0,1,0,0);
+      }
+      function drawCounter() {
+        ctx.translate(canvas.width,canvas.height/2);
+        ctx.beginPath();
+        ctx.moveTo(-10,canvas.height/-3);
+        ctx.lineTo(-10,canvas.height/3);
+        ctx.lineTo(-15,canvas.height/3);
+        ctx.lineTo(-15,canvas.height/-3);
+        ctx.lineTo(-10,canvas.height/-3);
+        ctx.fillStyle = "#000000";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.moveTo(-11,canvas.height/-3+1);
+        ctx.lineTo(-11,canvas.height/3-1);
+        ctx.lineTo(-14,canvas.height/3-1);
+        ctx.lineTo(-14,canvas.height/-3+1);
+        ctx.lineTo(-11,canvas.height/-3+1);
+        ctx.fillStyle = "#928287";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.rect(-14, canvas.height/3-1, 3, counterHeight);
+        ctx.fillStyle = "#3489eb";
+        ctx.fill();
+        ctx.closePath();
+        ctx.setTransform(1,0,0,1,0,0);
+      }
+      function gameOver() {
+        if (score > highScore) {
+          highScore = score;
+        }
+        alert("You died with a score of "+score+". Better luck next time.\n\nHigh score: "+highScore);
+        restartGame();
+      }
+      function moveBoats() {
+        drawSailboat();
+        drawSailboat2();
+        draw055();
+        sailboatFx -= sailboatSpeed;
+        type055Fx -= type055Speed;
+        sailboat2Fx -= sailboat2Speed;
+        if (sailboatFx < canvas.width + 25 && sailboatFx > -36) {
+          sailboatOnScreen = 1;
+        } else {
+          sailboatOnScreen = 0;
+        }
+        if (sailboat2Fx < canvas.width + 25 && sailboat2Fx > -36) {
+          sailboat2OnScreen = 1;
+        } else {
+          sailboat2OnScreen = 0;
+        }
+        if (type055Fx < canvas.width + 25 && type055Fx > -120) {
+          type055OnScreen = 1;
+        } else {
+          type055OnScreen = 0;
+        }
+      }
+      function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+      }
+      function randomBoat() {
+        ranBoat = getRndInteger(1,3);
+        ranSpacing = getRndInteger(100,400);
+        if (ranBoat == 1 && sailboatOnScreen == 0) {
+          sailboatFx = canvas.width + ranSpacing;
+        } else if (ranBoat == 2 && sailboat2OnScreen == 0) {
+          sailboat2Fx = canvas.width + ranSpacing;
+        } else if (ranBoat == 3 && type055OnScreen == 0) {
+          type055Fx = canvas.width + ranSpacing;
+        }
+      }
+      function drawSubR(subMoveAngle) { 
+        clear();
+        drawWater();
+        moveBoats();
+        //drawSailboat();
+       // draw055();
+        ctx.rotate(subMoveAngle * deg);
+        ctx.translate(50, sChullY);
+        ctx.beginPath();
+        ctx.arc(0, 0, 6, 0, Math.PI * 2);
+        ctx.moveTo(-16, -5);
+        ctx.lineTo(-8, -6);
+        ctx.lineTo(-12, -6);
+        ctx.lineTo(-10, -9);
+        ctx.lineTo(-4, -9);
+        ctx.lineTo(-3, -6);
+        ctx.lineTo(0, -6);
+        ctx.lineTo(0, 6);
+        ctx.lineTo(-16, 6);
+        ctx.lineTo(-31, 2);
+        ctx.lineTo(-33, 4);
+        ctx.lineTo(-36, 4);
+        ctx.lineTo(-35, -1);
+        ctx.lineTo(-36, -5);
+        ctx.lineTo(-33, -5);
+        ctx.lineTo(-31, -2);
+        ctx.lineTo(-16, -5);
+        ctx.fillStyle = "#91959c";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(0, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(-7, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(-14, -0.5, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "#4287f5";
+        ctx.fill();
+        ctx.closePath();
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        drawWaterO();
+        drawCounter();
+      }
+      function clear() {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      } 
+      function lvlUp() {
+        downSpeed += 0.01
+      }
+      function scoreKeeping() {
+        score ++;
+      }
+      alert("*This game is currently under development*\n\nAvoid hitting the boats without being submerged for too long!\n\nClick to control the submrine. Refresh the page to reset high score and view this pop-up agian.\nThis game is best played in landscape mode.")
+      setInterval(scoreKeeping, 1000);
+      setInterval(mUp,1);
+      drawSubR(360);
+      setInterval(lvlUp,10000);
+      setInterval(randomBoat,10000);
+      randomBoat();
+
+/*
+----------------- O L D   V E R S I O N S ---------------------
+*/
+      
+    </script>
+  </body>
+</html>
