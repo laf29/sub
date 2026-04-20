@@ -87,11 +87,15 @@
         ctx.fillRect(0, 50 * pixelSize, canvas.width, canvas.height);
         ctx.globalAlpha = 1;
       }
-
-      drawWater(0.4);
-      drawSubmarine(0);
-      drawWater(0.1);
-
+      function draw() {
+        drawWater(0.4);
+        drawSubmarine(0);
+        drawWater(0.1);
+      }
+      function play() {
+        draw()
+      }
+      setInterval(play(), 2);
       
   /*
 ----------------- O L D   V E R S I O N S ---------------------
