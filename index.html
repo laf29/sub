@@ -19,12 +19,13 @@
     </style>
   </head>
   <body style="background-color: #8c7615;">
-    <canvas id="myCanvas" onmousedown="mDown()">Your browser cannot support this game.</canvas>
+    <canvas id="myCanvas" style="height: 70px; width: 100%;" onmousedown="mDown()">Your browser cannot support this game.</canvas>
     <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
+      let submarineAngle = 0;
 
-      function drawSubmarine() {
+      function drawSubmarine(target_angle) {
         var a = 3;
       }
 
