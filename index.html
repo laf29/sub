@@ -34,7 +34,35 @@
       let submarineAngle = 0;
 
       function drawSubmarine(target_angle) {
-        var a = 3;
+        ctx.beginPath();
+        ctx.arc(0, 0, 6, 0, Math.PI * 2);
+        ctx.moveTo(-16, -5);
+        ctx.lineTo(-8, -6);
+        ctx.lineTo(-12, -6);
+        ctx.lineTo(-10, -9);
+        ctx.lineTo(-4, -9);
+        ctx.lineTo(-3, -6);
+        ctx.lineTo(0, -6);
+        ctx.lineTo(0, 6);
+        ctx.lineTo(-16, 6);
+        ctx.lineTo(-31, 2);
+        ctx.lineTo(-33, 4);
+        ctx.lineTo(-36, 4);
+        ctx.lineTo(-35, -1);
+        ctx.lineTo(-36, -5);
+        ctx.lineTo(-33, -5);
+        ctx.lineTo(-31, -2);
+        ctx.lineTo(-16, -5);
+        ctx.fillStyle = "#91959c";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(0, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(-7, -0.5, 2, 0, Math.PI * 2);
+        ctx.arc(-14, -0.5, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "#4287f5";
+        ctx.fill();
+        ctx.closePath();
       }
 
       drawSubmarine(0);
