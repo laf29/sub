@@ -46,7 +46,7 @@
         var angle = lerp(angle, targetAngle, 0.1)
       }
       function canvasClicked() {
-        submarineYPosition += 10
+        submarineYPosition += 10 * pixelSize
       }
       function drawSubmarine(targetAngle) {
         ctx.translate(submarineXPosition, submarineYPosition);
