@@ -78,16 +78,16 @@
         ctx.closePath();
         ctx.setTransform(1,0,0,1,0,0);
       }
-      function drawWater() {
-        ctx.globalAlpha = 0.2;
+      function drawWater(alpha) {
+        ctx.globalAlpha = alpha;
         ctx.fillStyle = "#54A8E8";
         ctx.fillRect(0, 50 * pixelSize, canvas.width, canvas.height);
         ctx.globalAlpha = 1;
       }
 
-      drawWater();
+      drawWater(0.4);
       drawSubmarine(0);
-      drawWater();
+      drawWater(0.1);
 
       
   /*
