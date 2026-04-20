@@ -38,9 +38,14 @@
       canvas.width = canvas.clientWidth;
       let submarineAngle = 0;
       let pixelSize = canvas.height/200;
+
+      function test() {
+        var deg2rad = degrees * (Math.PI / 180)
+        var angle = lerp(angle, targetAngle, 0.1)
+      }
       
 
-      function drawSubmarine(target_angle) {
+      function drawSubmarine(targetAngle) {
         ctx.translate(canvas.width/2,canvas.height/2);
         ctx.beginPath();
         ctx.arc(0 * pixelSize, 0 * pixelSize, 6 * pixelSize, 0, Math.PI * 2);
