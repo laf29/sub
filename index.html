@@ -29,13 +29,8 @@
   <body style="background-color: #A88E67;">
     
 
-    <canvas id="gameCanvas" style="height: 87vh; width: 100vw;" onmousedown="mDown()">Your browser cannot support this game.</canvas>
+    <canvas id="gameCanvas" style="height: 87%; width: 100%;" onmousedown="mDown()">Your browser cannot support this game.</canvas>
     <script>
-      var CanvasWidth=screen.availWidth;
-      var CanvasHeight=screen.availHeight;
-      var o=window.document.getElementById("gameCanvas");
-      o.innerHTML="<canvas id='gameCanvas' width='"+CanvasWidth+"' height='+CanvasHeight+'></canvas>";
-      
       const canvas = document.getElementById("gameCanvas");
       const ctx = canvas.getContext("2d");
       let submarineAngle = 0;
