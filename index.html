@@ -34,6 +34,7 @@
       let submarineAngle = 0;
 
       function drawSubmarine(target_angle) {
+        ctx.translate(canvas.width,canvas.height/2);
         ctx.beginPath();
         ctx.arc(0, 0, 6, 0, Math.PI * 2);
         ctx.moveTo(-16, -5);
