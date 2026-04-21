@@ -52,6 +52,11 @@
       }
       function canvasClicked() {
         submarineYPosition += 30 * pixelSize;
+        ctx.beginPath();
+        ctx.arc(0 , 100, 200, 100, Math.PI * 2);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fill();
+        ctx.closePath();
       }
       function drawSubmarine(targetAngle) {
         ctx.translate(submarineXPosition, submarineDepth);
