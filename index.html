@@ -54,7 +54,9 @@
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
       }
       function canvasClicked() {
-        targetSubmarineDepth -= 5 * pixelSize;
+        if (targetSubmarineDepth > 51.0 * pixelSize) {
+          targetSubmarineDepth -= 5 * pixelSize;
+        }
       }
       function drawSubmarine(targetAngle) {
         ctx.translate(submarineXPosition, submarineDepth);
