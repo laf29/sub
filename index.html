@@ -7,7 +7,6 @@
       * {
         padding: 0;
         margin: 0;
-       /* transform-origin: center; */
       }
       body { margin: 0; }
       canvas {
@@ -44,6 +43,9 @@
       function test() {
         var deg2rad = degrees * (Math.PI / 180)
         var angle = lerp(angle, targetAngle, 0.1)
+      }
+      function AdjustSubmarinePitchDepth() {
+        
       }
       function canvasClicked() {
         submarineYPosition += 30 * pixelSize
