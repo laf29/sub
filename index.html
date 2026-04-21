@@ -37,7 +37,9 @@
       var submarineXPosition = 80 * pixelSize
       var submarineYPosition = canvas.height/2
       var submarinePitch = 0;
+      var targetSubmarinePitch = 0;
       var submarineDepth = 51 * pixelSize;
+      var targetSubmarineDepth = 0;
       var submarineRotationSpeed = 0.1;
       var submarineUpSpeed = 0.1;
       
@@ -51,7 +53,7 @@
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
       }
       function canvasClicked() {
-        submarineYPosition += 30 * pixelSize;
+        targetSubmarineDepth += 30 * pixelSize;
         ctx.beginPath();
         ctx.arc(0 , 100, 200, 100, Math.PI * 2);
         ctx.fillStyle = "#FFFFFF";
@@ -98,12 +100,14 @@
         ctx.globalAlpha = 1;
       }
       function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater(0.4);
         drawSubmarine(0);
         drawWater(0.1);
       }
       function play() {
         draw();
+        adjustSubmarinePitchDepth();
       }
       setInterval(play(), 2);
       
