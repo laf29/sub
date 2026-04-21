@@ -35,20 +35,26 @@
       const ctx = canvas.getContext("2d");
       canvas.height = canvas.clientHeight;
       canvas.width = canvas.clientWidth;
-      let submarineAngle = 0;
       let pixelSize = canvas.height/200;
       var submarineXPosition = 80 * pixelSize
       var submarineYPosition = canvas.height/2
+      var submarinePitch = 0;
+      var submarineDepth = 0;
+      var submarineRotationSpeed = 0.1;
+      var submarineUpSpeed = 0.1;
+      
 
       function test() {
-        var deg2rad = degrees * (Math.PI / 180)
-        var angle = lerp(angle, targetAngle, 0.1)
+        var deg2rad = degrees * (Math.PI / 180);
+        var angle = lerp(angle, targetAngle, 0.1);
       }
-      function AdjustSubmarinePitchDepth() {
+      function adjustSubmarinePitchDepth() {
+        submarinePitch = lerp(submarinePitch, targetSubmarinePitch, submarineRotationSpeed);
+        submarineDepth = lerp(submarineDepth, targetSubmarineDepth, speed);
         
       }
       function canvasClicked() {
-        submarineYPosition += 30 * pixelSize
+        submarineYPosition += 30 * pixelSize;
       }
       function drawSubmarine(targetAngle) {
         ctx.translate(submarineXPosition, submarineYPosition);
@@ -95,7 +101,7 @@
         drawWater(0.1);
       }
       function play() {
-        draw()
+        draw();
       }
       setInterval(play(), 2);
       
