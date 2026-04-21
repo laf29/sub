@@ -42,7 +42,7 @@
       var submarineDepth = 51.0 * pixelSize;
       var targetSubmarineDepth = 51.0 * pixelSize;
       var submarineRotationSpeed = 0.1;
-      var submarineUpSpeed = 0.1;
+      var submarineUpSpeed = 0.01;
       
 
       function test() {
@@ -54,7 +54,7 @@
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
       }
       function canvasClicked() {
-        targetSubmarineDepth += 30 * pixelSize;
+        targetSubmarineDepth += 5 * pixelSize;
       }
       function drawSubmarine(targetAngle) {
         ctx.translate(submarineXPosition, submarineDepth);
