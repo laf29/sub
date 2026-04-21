@@ -29,6 +29,7 @@
   <body style="background-color: #A88E67;">
     <canvas id="gameCanvas" style="height: 87vh; width: 100vw;" onmousedown="canvasClicked()">Your browser cannot support this game.</canvas>
     <script>
+      const lerp = (start, end, amount) => start + (end - start) * amount;
       const canvas = document.getElementById("gameCanvas");
       const ctx = canvas.getContext("2d");
       canvas.height = canvas.clientHeight;
