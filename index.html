@@ -106,6 +106,7 @@
       function play() {
         adjustSubmarinePitchDepth();
         draw();
+        targetSubmarineDepth += 0.1 * pixelSize;
       }
       setInterval(play, 20);
       
