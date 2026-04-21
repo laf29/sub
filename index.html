@@ -37,8 +37,8 @@
       let pixelSize = canvas.height/200;
       var submarineXPosition = 80 * pixelSize
       var submarineYPosition = canvas.height/2
-      var submarinePitch = Math.PI;
-      var targetSubmarinePitch = Math.PI;
+      var submarinePitch = 0.0;
+      var targetSubmarinePitch = 0.0;
       var submarineDepth = 51.0 * pixelSize;
       var targetSubmarineDepth = 51.0 * pixelSize;
       var submarineRotationSpeed = 0.1;
@@ -57,7 +57,9 @@
       function canvasClicked() {
         if (targetSubmarineDepth > 51.0 * pixelSize) {
           targetSubmarineDepth -= 5 * pixelSize;
-          targetSubmarinePitch += 10 * (Math.PI / 180);
+          if (targetSubmarinePitch < 45 * (Math.PI / 180)) {
+            targetSubmarinePitch += 5 * (Math.PI / 180);
+          }
         }
       }
       function drawSubmarine(targetAngle) {
