@@ -113,7 +113,7 @@
         adjustSubmarinePitchDepth();
         draw();
         targetSubmarineDepth += submarineDecentSpeed * pixelSize;
-        targetSubmarinePitch = targetSubmarineDepth-submarineDepth/canvas.height * maxSubmarinePitch
+        targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch
       }
       setInterval(play, 20);
       
