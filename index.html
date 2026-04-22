@@ -114,7 +114,7 @@
         adjustSubmarinePitchDepth();
         draw();
         targetSubmarineDepth += submarineDecentSpeed * pixelSize;
-        targetSubmarinePitch = clamp((((targetSubmarineDepth - submarine depth)/40) * pixelSize * maxSubmarinePitch), -maxSubmarinePitch, maxSubmarinePitch);
+        targetSubmarinePitch = clamp((((targetSubmarineDepth - submarineDepth)/40) * pixelSize * maxSubmarinePitch), -maxSubmarinePitch, maxSubmarinePitch);
         //targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch;
         submarineUpSpeed = Math.abs((targetSubmarineDepth-submarineDepth)/(50 * pixelSize));
       }
