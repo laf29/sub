@@ -59,11 +59,13 @@
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
       }
       function canvasClicked() {
-        if (targetSubmarineDepth > submarineDepthRange[0]) {
-          targetSubmarineDepth -= 10 * pixelSize;
-          //if (targetSubmarinePitch > maxSubmarinePitch) {
-          //  targetSubmarinePitch -= 1 * (Math.PI / 180);
-          //}
+        if (targetSubmarineDepth < submarineDepthRange[1]) {
+          if (targetSubmarineDepth > submarineDepthRange[0]) {
+            targetSubmarineDepth -= 10 * pixelSize;
+            //if (targetSubmarinePitch > maxSubmarinePitch) {
+            //  targetSubmarinePitch -= 1 * (Math.PI / 180);
+            //}
+          }
         }
       }
       function drawSubmarine(targetAngle) {
