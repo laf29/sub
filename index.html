@@ -44,7 +44,7 @@
       var submarineDepth = 51.0 * pixelSize;
       var targetSubmarineDepth = 51.0 * pixelSize;
       var submarineRotationSpeed = 0.1;
-      var submarineUpSpeed = 0.1;
+      var submarineUpSpeed = 0.08;
       var submarineDecentSpeed = 0.2;
       
 
@@ -58,7 +58,7 @@
       }
       function canvasClicked() {
         if (targetSubmarineDepth > 51.0 * pixelSize) {
-          targetSubmarineDepth -= 5 * pixelSize;
+          targetSubmarineDepth -= 8 * pixelSize;
           //if (targetSubmarinePitch > maxSubmarinePitch) {
           //  targetSubmarinePitch -= 1 * (Math.PI / 180);
           //}
