@@ -65,8 +65,8 @@
         }
       }
       function drawSubmarine(targetAngle) {
-        ctx.rotate(submarinePitch);
         ctx.translate(submarineXPosition, submarineDepth);
+        ctx.rotate(submarinePitch);
         ctx.beginPath();
         ctx.arc(0 * pixelSize, 0 * pixelSize, 6 * pixelSize, 0, Math.PI * 2);
         ctx.moveTo(-16 * pixelSize, -5 * pixelSize);
