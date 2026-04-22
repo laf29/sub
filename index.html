@@ -59,13 +59,11 @@
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
       }
       function canvasClicked() {
-        if (targetSubmarineDepth < submarineDepthRange[1]) {
-          if (targetSubmarineDepth > submarineDepthRange[0]) {
-            targetSubmarineDepth -= 10 * pixelSize;
-            //if (targetSubmarinePitch > maxSubmarinePitch) {
-            //  targetSubmarinePitch -= 1 * (Math.PI / 180);
-            //}
-          }
+        if (targetSubmarineDepth > submarineDepthRange[0]) {
+          targetSubmarineDepth -= 10 * pixelSize;
+          //if (targetSubmarinePitch > maxSubmarinePitch) {
+          //  targetSubmarinePitch -= 1 * (Math.PI / 180);
+          //}
         }
       }
       function drawSubmarine(targetAngle) {
@@ -115,12 +113,14 @@
         drawWater(0.1);
       }
       function play() {
-        adjustSubmarinePitchDepth();
-        draw();
-        targetSubmarineDepth += submarineDecentSpeed * pixelSize;
-        targetSubmarinePitch = clamp((((targetSubmarineDepth - submarineDepth)/40) * pixelSize * maxSubmarinePitch), -maxSubmarinePitch, maxSubmarinePitch);
-        //targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch;
-        //submarineUpSpeed = Math.abs((targetSubmarineDepth-submarineDepth)/(50 * pixelSize));
+        if (targetSubmarineDepth < submarineDepthRange[1]) {
+          adjustSubmarinePitchDepth();
+          draw();
+          targetSubmarineDepth += submarineDecentSpeed * pixelSize;
+          targetSubmarinePitch = clamp((((targetSubmarineDepth - submarineDepth)/40) * pixelSize * maxSubmarinePitch), -maxSubmarinePitch, maxSubmarinePitch);
+          //targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch;
+          //submarineUpSpeed = Math.abs((targetSubmarineDepth-submarineDepth)/(50 * pixelSize));
+        }
       }
       setInterval(play, 20);
       
