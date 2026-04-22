@@ -30,6 +30,7 @@
     <canvas id="gameCanvas" style="height: 87vh; width: 100vw;" onmousedown="canvasClicked()">Your browser cannot support this game.</canvas>
     <script>
       const lerp = (start, end, amount) => start + (end - start) * amount;
+      const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
       const canvas = document.getElementById("gameCanvas");
       const ctx = canvas.getContext("2d");
       canvas.height = canvas.clientHeight;
@@ -38,7 +39,7 @@
       var submarineXPosition = 80 * pixelSize
       var submarineYPosition = canvas.height/2
       var submarinePitch = 0.0;
-      var maxSubmarinePitch = 360 * (Math.PI / 180);
+      var maxSubmarinePitch = 15 * (Math.PI / 180);
       var targetSubmarinePitch = 0.0;
       var submarineDepth = 51.0 * pixelSize;
       var targetSubmarineDepth = 51.0 * pixelSize;
@@ -113,7 +114,8 @@
         adjustSubmarinePitchDepth();
         draw();
         targetSubmarineDepth += submarineDecentSpeed * pixelSize;
-        targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch;
+        targetSubmarinePitch = clamp(((targetSubmarineDepth - submarine depth)/40 * pixelSize) * maxSubmarinePitch, -maxSubmarinePitch, maxSubmarinePitch)
+        //targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch;
         submarineUpSpeed = Math.abs((targetSubmarineDepth-submarineDepth)/(50 * pixelSize));
       }
       setInterval(play, 20);
