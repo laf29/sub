@@ -129,6 +129,8 @@
           targetSubmarinePitch = clamp((((targetSubmarineDepth - submarineDepth)/40) * pixelSize * maxSubmarinePitch), -maxSubmarinePitch, maxSubmarinePitch);
           //targetSubmarinePitch = (targetSubmarineDepth-submarineDepth)/(50 * pixelSize) * maxSubmarinePitch;
           //submarineUpSpeed = Math.abs((targetSubmarineDepth-submarineDepth)/(50 * pixelSize));
+        } else {
+          resetGame();
         }
       }
       resetGame();
