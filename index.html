@@ -50,7 +50,7 @@
       var submarineDecentSpeed = 0.2;
       var submarinePivotOffset = -10.0 * pixelSize;
       var boats = []; // [x, y, x1hitbox, x2hitbox, yhitbox]
-      var boatTypeA = []; // [color, arc/line, [x, y], [x, y], ...], []
+      var boatTypeA = [["#c7e9ff", "path", [-19,-40], [4,-8], [-27,-8], [-19,-40]], ["#c4b9b9", "path",  [-20,-4], [-20,-7], [-27,-7], [-27,-9], [-19.5,-9], [-19.5,-40], [-18.5,-40], [-18.5,-9], [4,-9], [4,-7], [-18,-7], [-18,-4], [-20,-4]], ]; // [color, arc/line, [x, y], [x, y], ...], []
       var boatTypeB = [];
       function resetGame() {
         submarinePitch = 0.0;
