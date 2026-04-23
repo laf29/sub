@@ -50,8 +50,6 @@
         var submarineDecentSpeed = 0.2;
         var submarinePivotOffset = -10.0 * pixelSize;
       }
-      
-
       function test() {
         var deg2rad = degrees * (Math.PI / 180);
         var angle = lerp(angle, targetAngle, 0.1);
@@ -126,6 +124,7 @@
           //submarineUpSpeed = Math.abs((targetSubmarineDepth-submarineDepth)/(50 * pixelSize));
         }
       }
+      resetGame();
       setInterval(play, 20);
       
   /*
