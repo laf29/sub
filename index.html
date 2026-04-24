@@ -50,9 +50,9 @@
       var submarineUpSpeed = 0.08;
       var submarineDecentSpeed = 0.2;
       var submarinePivotOffset = -10.0 * pixelSize;
-      var boats = [4,4]; // [x, y, x1hitbox, x2hitbox, yhitbox]
-      //var boatTypeA = [["#BA615F", "path", [-19,-40], [4,-8], [-27,-8], [-19,-40]], ["#A88E67", "path", [-20,-4], [-20,-7], [-27,-7], [-27,-9], [-19.5,-9], [-19.5,-40], [-18.5,-40], [-18.5,-9], [4,-9], [4,-7], [-18,-7], [-18,-4], [-20,-4]], ["#ffffff", "arc", -33, -5, 5, 0, Math.PI], ["#ffffff", "path", [10,-5], [5,0.5], [-32,0], [-36,-5], [10,-5]]]; // [color, arc/line, [x, y], [x, y], ...], []
-      var boatTypeB = [4,4];
+      var boats = []; // [x, y, x1hitbox, x2hitbox, yhitbox]
+      var boatTypeA = [["#BA615F", "path", [-19,-40], [4,-8], [-27,-8], [-19,-40]], ["#A88E67", "path", [-20,-4], [-20,-7], [-27,-7], [-27,-9], [-19.5,-9], [-19.5,-40], [-18.5,-40], [-18.5,-9], [4,-9], [4,-7], [-18,-7], [-18,-4], [-20,-4]], ["#ffffff", "arc", -33, -5, 5, 0, Math.PI], ["#ffffff", "path", [10,-5], [5,0.5], [-32,0], [-36,-5], [10,-5]]]; // [color, arc/line, [x, y], [x, y], ...], []
+      var boatTypeB = [];
       function resetGame() {
         submarinePitch = 0.0;
         targetSubmarinePitch = 0.0;
@@ -116,7 +116,7 @@
       }
       function drawBoats() {
         for (let i = 0; i < boatTypeA.length; i++) {
-          boatTypeA = [2]
+          boatTypeA = [2];
         }
       }
       function drawWater(alpha) {
