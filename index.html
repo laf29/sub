@@ -123,6 +123,8 @@
               ctx.arc(boats[b][2][p][2] * pixelSize, boats[b][2][p][3] * pixelSize, boats[b][2][p][4] * pixelSize, boats[b][2][p][5], boats[b][2][p][6]);
             }
           }
+          ctx.fillStyle = "#668093";
+          ctx.fill();
           ctx.setTransform(1,0,0,1,0,0);
         }
       }
@@ -136,6 +138,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawWater(0.4);
         drawSubmarine(0);
+        drawBoats()
         drawWater(0.1);
       }
       function spawnBoat() {
