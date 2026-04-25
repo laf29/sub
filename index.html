@@ -63,10 +63,6 @@
         submarineDecentSpeed = 0.2;
         boats = [[80, 80, boatTypeA],[120, 80, boatTypeA]]
       }
-      function test() {
-        var deg2rad = degrees * (Math.PI / 180);
-        var angle = lerp(angle, targetAngle, 0.1);
-      }
       function adjustSubmarinePitchDepth() {
         submarinePitch = lerp(submarinePitch, targetSubmarinePitch, submarineRotationSpeed);
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
@@ -121,10 +117,9 @@
           for (let p = 0; p < boats[b][2].length; p++) {
             if (boats[b][2][p][1] == "arc") {
               ctx.arc(boats[b][2][p][2] * pixelSize, boats[b][2][p][3] * pixelSize, boats[b][2][p][4] * pixelSize, boats[b][2][p][5], boats[b][2][p][6]);
-              var s = 2;
+              ctx.fillStyle = boats[b][2][p][0];
+              ctx.fill();
             }
-            ctx.fillStyle = boats[b][2][p][0];
-            ctx.fill();
           }
           ctx.setTransform(1,0,0,1,0,0);
         }
