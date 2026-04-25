@@ -118,7 +118,7 @@
       function drawBoats() {
         for (let b = 0; b < boats.length; b++) {
           ctx.translate(boats[b][0], boats[b][1]);
-          for (let p = 0; i < boats[b][2].length; i++) {
+          for (let p = 0; p < boats[b][2].length; p++) {
             if (boats[b][2][p][1] == "arc") {
               //ctx.arc(boats[b][2][p][2] * pixelSize, boats[b][2][p][3] * pixelSize, boats[b][2][p][4] * pixelSize, boats[b][2][p][5], boats[b][2][p][6]);
               var s = 2;
