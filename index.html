@@ -70,10 +70,7 @@
       function canvasClicked() {
         if (targetSubmarineDepth < submarineDepthRange[1]) {
           if (targetSubmarineDepth > submarineDepthRange[0] + 3 * pixelSize) {
-            targetSubmarineDepth -= 10 * pixelSize;
-            //if (targetSubmarinePitch > maxSubmarinePitch) {
-            //  targetSubmarinePitch -= 1 * (Math.PI / 180);
-            //}
+            targetSubmarineDepth -= 10 * pixelSize;
           }
         }
       }
@@ -118,8 +115,6 @@
             ctx.beginPath();
             if (boats[b][2][p][1] == "arc") {
               ctx.arc(boats[b][2][p][2] * pixelSize, boats[b][2][p][3] * pixelSize, boats[b][2][p][4] * pixelSize, boats[b][2][p][5], boats[b][2][p][6]);
-              //ctx.fillStyle = boats[b][2][p][0];
-              //ctx.fill();
         
             } else if (boats[b][2][p][1] == "path") {
               ctx.moveTo(boats[b][2][p][2][0] * pixelSize, boats[b][2][p][2][1] * pixelSize);
