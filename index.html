@@ -121,6 +121,10 @@
               //ctx.fillStyle = boats[b][2][p][0];
               //ctx.fill();
         
+            } else if (boats[b][2][p][1] == "path") {
+              ctx.moveTo(boats[b][2][p][2][0] * pixelSize, boats[b][2][p][2][1] * pixelSize);
+              for (let c = 3; c < boats[b][2][p].length; c++) {
+              }
             }
             ctx.fillStyle = boats[b][2][p][0];
             ctx.fill();
