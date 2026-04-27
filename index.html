@@ -58,6 +58,11 @@
           canvasClicked();
         }
       });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'w'|| event.key === 'W') {
+          canvasClicked();
+        }
+      });
       function resetGame() {
         submarinePitch = 0.0;
         targetSubmarinePitch = 0.0;
