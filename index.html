@@ -98,7 +98,7 @@
       }
       function detectSubmarineBoatCollision() {
         for (let b = 0; b < boats.length; b++) {
-          if (boats[b][0] > submarineXPosition - (36 * pixelSize) && boats[b][0] < submarineXPosition && submarineDepth < boats[b][1]) {
+          if (boats[b][0] > submarineXPosition - (36 * pixelSize) && boats[b][0] < submarineXPosition && submarineDepth - (7 * pixelSize) < boats[b][1]) {
             submarineCrashed("boat");
           }
         }
