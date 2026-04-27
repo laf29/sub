@@ -61,7 +61,7 @@
         submarineRotationSpeed = 0.1;
         submarineUpSpeed = 0.08;
         submarineDecentSpeed = 0.2;
-        boats = [[130, 52, boatTypeA], [300, 52, boatTypeB]];
+        boats = [[130, 52, boatTypeA, 1], [300, 52, boatTypeB, 3]];
       }
       function getWeightedAverage(values, weights) {
         if (values.length !== weights.length || values.length === 0) return 0;
@@ -74,6 +74,11 @@
       function adjustSubmarinePitchDepth() {
         submarinePitch = lerp(submarinePitch, targetSubmarinePitch, submarineRotationSpeed);
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
+      }
+      function moveBoats() {
+        for (let b = 0; b < boats.length; b++) {
+          boats[b][0] -= boats[b][3];
+        }
       }
       function canvasClicked() {
         if (targetSubmarineDepth < submarineDepthRange[1]) {
@@ -156,6 +161,7 @@
       function play() {
         if (targetSubmarineDepth < submarineDepthRange[1]) {
           adjustSubmarinePitchDepth();
+          moveBoats();
           draw();
           targetSubmarineDepth += submarineDecentSpeed * pixelSize;
           targetSubmarinePitch = clamp((((targetSubmarineDepth - submarineDepth)/40) * pixelSize * maxSubmarinePitch), -maxSubmarinePitch, maxSubmarinePitch);
