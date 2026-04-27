@@ -63,6 +63,14 @@
         submarineDecentSpeed = 0.2;
         boats = [[130, 52, boatTypeA], [300, 52, boatTypeB]];
       }
+      function getWeightedAverage(values, weights) {
+        if (values.length !== weights.length || values.length === 0) return 0;
+        const weightedSum = values.reduce((sum, value, index) => {
+          return sum + (value * weights[index]);
+        }, 0);
+        const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+        return weightedSum / totalWeight;
+      }
       function adjustSubmarinePitchDepth() {
         submarinePitch = lerp(submarinePitch, targetSubmarinePitch, submarineRotationSpeed);
         submarineDepth = lerp(submarineDepth, targetSubmarineDepth, submarineUpSpeed);
