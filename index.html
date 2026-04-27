@@ -182,6 +182,7 @@
         return "Hello World";
       }
       function play() {
+        detectSubmarineBoatCollision();
         if (targetSubmarineDepth < submarineDepthRange[1]) {
           adjustSubmarinePitchDepth();
           moveBoats();
