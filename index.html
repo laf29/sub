@@ -62,33 +62,27 @@
       let obstacleMine;
       let obstacleTypes = [obstacleSailboat, obstacleType055, obstacleFish, obstacleYatch, obstacleAircraftCarrier, obstacleTorpedo, obstacleSubmarine, obstacleMine];
       let radius = 0;
-const canvas = document.getElementById('myCanvas');
-const ctx = canvas.getContext('2d');
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
-
-function drawIris() {
-  // 1. Clear canvas and draw background
-  ctx.globalCompositeOperation = 'source-over';
-  ctx.fillStyle = 'black';
-  ctx.fillRect(0, 0, canvas.width, canvas.height); // Or draw image
-  
-  // 2. Set up mask
-  ctx.beginPath();
-  ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-  
-  // 3. Cut hole
-  ctx.globalCompositeOperation = 'destination-out';
-  ctx.fill();
-  
-  // 4. Increase radius for iris-in effect
-  radius += 5;
-  
-  if (radius < canvas.width) {
-    requestAnimationFrame(drawIris);
-  }
-}
-drawIris();
+      function drawIris() {
+      // 1. Clear canvas and draw background
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // Or draw image
+        
+        // 2. Set up mask
+        ctx.beginPath();
+        ctx.arc(submarineXPosition, submarineDepth, radius, 0, Math.PI * 2);
+        
+        // 3. Cut hole
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fill();
+        
+        // 4. Increase radius for iris-in effect
+        radius += 5;
+        
+        if (radius < canvas.width) {
+          requestAnimationFrame(drawIris);
+        }
+      }
 
       document.addEventListener('keydown', (event) => {
         if (event.key === ' ') {
@@ -261,6 +255,7 @@ drawIris();
       }
       resetGame();
       setInterval(play, 20);
+      drawIris();
       
   /*
 ----------------- O L D   V E R S I O N S ---------------------
