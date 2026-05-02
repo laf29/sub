@@ -91,7 +91,7 @@
         const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
         return weightedSum / totalWeight;
       }
-      function isColliding(rectA, rectB) {
+      function isRectangleColliding(rectA, rectB) {
         return (
           rectA.x < rectB.x + rectB.width &&
           rectA.x + rectA.width > rectB.x &&
