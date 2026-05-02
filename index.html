@@ -85,7 +85,7 @@
         ictx.globalCompositeOperation = 'destination-out';
         ictx.fill();
         ictx.closePath();
-        radius += 5;
+        radius += 50 * pixelSize;
         if (radius < irisCanvas.width) {
           requestAnimationFrame(drawIris);
         }
