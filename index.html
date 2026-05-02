@@ -72,6 +72,9 @@
           canvasClicked();
         }
       });
+      function mainScreen() {
+        document.body.style.backgroundColor = "FFFFFF";
+      }
       function resetGame() {
         submarinePitch = 0.0;
         targetSubmarinePitch = 0.0;
@@ -130,6 +133,7 @@
       }
       function submarineCrashed(cause) {
         if (cause == "ground") {
+          mainScreen();
           resetGame();
         } else if (cause == "boat") {
           resetGame();
