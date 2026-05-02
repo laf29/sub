@@ -63,22 +63,15 @@
       let obstacleTypes = [obstacleSailboat, obstacleType055, obstacleFish, obstacleYatch, obstacleAircraftCarrier, obstacleTorpedo, obstacleSubmarine, obstacleMine];
       let radius = 0;
       function drawIris() {
-      // 1. Clear canvas and draw background
         ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvas.width, canvas.height); // Or draw image
-        
-        // 2. Set up mask
+        ctx.fillStyle = "000000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
         ctx.arc(submarineXPosition, submarineDepth, radius, 0, Math.PI * 2);
-        
-        // 3. Cut hole
         ctx.globalCompositeOperation = 'destination-out';
         ctx.fill();
-        
-        // 4. Increase radius for iris-in effect
+        ctx.closePath();
         radius += 25;
-        
         if (radius < canvas.width) {
           requestAnimationFrame(drawIris);
         }
@@ -254,6 +247,7 @@
         }
       }
       resetGame();
+      draw();
       setInterval(play, 20);
       drawIris();
       
