@@ -38,29 +38,29 @@
       canvas.height = canvas.clientHeight;
       canvas.width = canvas.clientWidth;
       let pixelSize = canvas.height/200;
-      var submarineXPosition = 80 * pixelSize;
-      var submarinePitch = 0.0;
-      var maxSubmarinePitch = 15 * (Math.PI / 180);
-      var targetSubmarinePitch = 0.0;
-      var submarineDepth = 51.0 * pixelSize;
-      var submarineDepthRange = [52.0 * pixelSize, canvas.height];
-      var targetSubmarineDepth = 51.0 * pixelSize;
-      var submarineRotationSpeed = 0.1;
-      var submarineUpSpeed = 0.08;
-      var submarineDecentSpeed = 0.2;
-      var submarineSpeed = 0.01;
-      var submarinePivotOffset = -10.0 * pixelSize;
-      var oxygenLevel;
-      var obstacles = []; // [x, y, type, speed,  x1hitbox, x2hitbox, yhitbox]
-      var obstacleSailboat = [["#FFFFFF", "arc", 4, -8, 31, Math.PI, Math.atan2(40, 55) + Math.PI],["#FFFFFF", "path", [-19,-40], [4,-8], [-27,-8], [-19,-40]], ["#A88E67", "path", [-20,-4], [-20,-7], [-27,-7], [-27,-9], [-19.5,-9], [-19.5,-40], [-18.5,-40], [-18.5,-9], [4,-9], [4,-7], [-18,-7], [-18,-4], [-20,-4]], ["#BA615F", "arc", -33, -5, 5, 0, Math.PI], ["#BA615F", "path", [10,-5], [5,0.5], [-32,0], [-36,-5], [10,-5]]]; // [color, arc/line, [x, y], [x, y], ...], []
-      var obstacleType055 = [["#000000", "path", [0, -12], [45, -12], [45, -16.5], [55.5, -16.5], [58.5, -27], [73.5, -27], [78, -36], [85.5, -36], [87, -45], [88.5, -36], [91.5, -24 ],  [ 115.5, -24 ], [118.5, -15], [126, -15], [127.5, -12], [139.5, -12], [142.5, -18], [153, -18], [153, -6], [177, -6], [174, 0], [7.5, 0], [0, -12]]];
-      var obstacleFish;
-      var obstacleYatch;
-      var obstacleAircraftCarrier;
-      var obstacleTorpedo;
-      var obstacleSubmarine;
-      var obstacleMine;
-      var obstacleTypes = [obstacleSailboat, obstacleType055, obstacleFish, obstacleYatch, obstacleAircraftCarrier, obstacleTorpedo, obstacleSubmarine, obstacleMine];
+      let submarineXPosition = 80 * pixelSize;
+      let submarinePitch = 0.0;
+      let maxSubmarinePitch = 15 * (Math.PI / 180);
+      let targetSubmarinePitch = 0.0;
+      let submarineDepth = 51.0 * pixelSize;
+      let submarineDepthRange = [52.0 * pixelSize, canvas.height];
+      let targetSubmarineDepth = 51.0 * pixelSize;
+      let submarineRotationSpeed = 0.1;
+      let submarineUpSpeed = 0.08;
+      let submarineDecentSpeed = 0.2;
+      let submarineSpeed = 0.01;
+      let submarinePivotOffset = -10.0 * pixelSize;
+      let oxygenLevel;
+      let obstacles = []; // [x, y, type, speed,  x1hitbox, x2hitbox, yhitbox]
+      let obstacleSailboat = [["#FFFFFF", "arc", 4, -8, 31, Math.PI, Math.atan2(40, 55) + Math.PI],["#FFFFFF", "path", [-19,-40], [4,-8], [-27,-8], [-19,-40]], ["#A88E67", "path", [-20,-4], [-20,-7], [-27,-7], [-27,-9], [-19.5,-9], [-19.5,-40], [-18.5,-40], [-18.5,-9], [4,-9], [4,-7], [-18,-7], [-18,-4], [-20,-4]], ["#BA615F", "arc", -33, -5, 5, 0, Math.PI], ["#BA615F", "path", [10,-5], [5,0.5], [-32,0], [-36,-5], [10,-5]]]; // [color, arc/line, [x, y], [x, y], ...], []
+      let obstacleType055 = [["#000000", "path", [0, -12], [45, -12], [45, -16.5], [55.5, -16.5], [58.5, -27], [73.5, -27], [78, -36], [85.5, -36], [87, -45], [88.5, -36], [91.5, -24 ],  [ 115.5, -24 ], [118.5, -15], [126, -15], [127.5, -12], [139.5, -12], [142.5, -18], [153, -18], [153, -6], [177, -6], [174, 0], [7.5, 0], [0, -12]]];
+      let obstacleFish;
+      let obstacleYatch;
+      let obstacleAircraftCarrier;
+      let obstacleTorpedo;
+      let obstacleSubmarine;
+      let obstacleMine;
+      let obstacleTypes = [obstacleSailboat, obstacleType055, obstacleFish, obstacleYatch, obstacleAircraftCarrier, obstacleTorpedo, obstacleSubmarine, obstacleMine];
       
       document.addEventListener('keydown', (event) => {
         if (event.key === ' ') {
@@ -238,7 +238,7 @@
       let movingUp = 0;
       let movingDown = 0;
       let milliTime = 0;
-      var deg = Math.PI/180;
+      let deg = Math.PI/180;
       let sandY = canvas.height - 6;
       let subUpping = 0;
       let downSpeed = 0.05;
